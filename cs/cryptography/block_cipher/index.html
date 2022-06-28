@@ -1,0 +1,2052 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../../img/green_aleph.jpg">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
+    
+    
+      
+        <title>分组密码 - csnotes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.120efc48.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.9647289d.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="teal" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="csnotes" class="md-header__button md-logo" aria-label="csnotes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            csnotes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              分组密码
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="" data-md-color-primary="teal" data-md-color-accent=""  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_3">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lzy-tony/csnotes/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lzy-tony/csnotes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../intro/" class="md-tabs__link md-tabs__link--active">
+        计算机科学
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="csnotes" class="md-nav__button md-logo" aria-label="csnotes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    csnotes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lzy-tony/csnotes/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lzy-tony/csnotes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          计算机科学
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="计算机科学" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          计算机科学
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_1" type="checkbox" id="__nav_1_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_1">
+          密码学
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="密码学" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          密码学
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/" class="md-nav__link">
+        绪论
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../math/" class="md-nav__link">
+        数学前置
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../classic/" class="md-nav__link">
+        古典密码学
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shannon/" class="md-nav__link">
+        Shannon 理论
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          分组密码
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        分组密码
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    概述
+  </a>
+  
+    <nav class="md-nav" aria-label="概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    迭代密码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    轮函数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    代换-置换网络
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    线性密码分析
+  </a>
+  
+    <nav class="md-nav" aria-label="线性密码分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    偏差
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    堆积引理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    线性逼近
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    线性攻击
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    差分密码分析
+  </a>
+  
+    <nav class="md-nav" aria-label="差分密码分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    差分链
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    差分攻击
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#des" class="md-nav__link">
+    DES
+  </a>
+  
+    <nav class="md-nav" aria-label="DES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#feistel" class="md-nav__link">
+    Feistel 结构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#des_1" class="md-nav__link">
+    DES
+  </a>
+  
+    <nav class="md-nav" aria-label="DES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    初始置换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    加密轮
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f" class="md-nav__link">
+    f 函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    密钥生成
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#double-des" class="md-nav__link">
+    Double-DES
+  </a>
+  
+    <nav class="md-nav" aria-label="Double-DES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mitm" class="md-nav__link">
+    MITM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triple-des" class="md-nav__link">
+    Triple-DES
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aes" class="md-nav__link">
+    AES
+  </a>
+  
+    <nav class="md-nav" aria-label="AES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aes_1" class="md-nav__link">
+    AES
+  </a>
+  
+    <nav class="md-nav" aria-label="AES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#state" class="md-nav__link">
+    State
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subbytes" class="md-nav__link">
+    SubBytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shiftrows" class="md-nav__link">
+    ShiftRows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixcolumns" class="md-nav__link">
+    MixColumns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    工作模式
+  </a>
+  
+    <nav class="md-nav" aria-label="工作模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ecb" class="md-nav__link">
+    ECB 模式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cbc" class="md-nav__link">
+    CBC 模式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cfb" class="md-nav__link">
+    CFB 模式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ofb" class="md-nav__link">
+    OFB 模式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ctr" class="md-nav__link">
+    CTR 模式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    操作模式对比
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    填充
+  </a>
+  
+    <nav class="md-nav" aria-label="填充">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    填充方法
+  </a>
+  
+    <nav class="md-nav" aria-label="填充方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    比特填充
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    字节填充
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#padding-oracle" class="md-nav__link">
+    Padding Oracle 攻击
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ciphertext-stealing" class="md-nav__link">
+    Ciphertext Stealing
+  </a>
+  
+    <nav class="md-nav" aria-label="Ciphertext Stealing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ecb-cts" class="md-nav__link">
+    ECB-CTS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cbc-cts" class="md-nav__link">
+    CBC-CTS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xts-aes" class="md-nav__link">
+    XTS-AES
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    通用密码分析
+  </a>
+  
+    <nav class="md-nav" aria-label="通用密码分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    时间存储折中攻击
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aes_2" class="md-nav__link">
+    AES 密码分析
+  </a>
+  
+    <nav class="md-nav" aria-label="AES 密码分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    积分攻击
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    不可能差分攻击
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hash/" class="md-nav__link">
+        Hash 函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../public_key/" class="md-nav__link">
+        公钥密码体系
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../signature/" class="md-nav__link">
+        数字签名
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    概述
+  </a>
+  
+    <nav class="md-nav" aria-label="概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    迭代密码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    轮函数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    代换-置换网络
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    线性密码分析
+  </a>
+  
+    <nav class="md-nav" aria-label="线性密码分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    偏差
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    堆积引理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    线性逼近
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    线性攻击
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    差分密码分析
+  </a>
+  
+    <nav class="md-nav" aria-label="差分密码分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    差分链
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    差分攻击
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#des" class="md-nav__link">
+    DES
+  </a>
+  
+    <nav class="md-nav" aria-label="DES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#feistel" class="md-nav__link">
+    Feistel 结构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#des_1" class="md-nav__link">
+    DES
+  </a>
+  
+    <nav class="md-nav" aria-label="DES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    初始置换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    加密轮
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f" class="md-nav__link">
+    f 函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    密钥生成
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#double-des" class="md-nav__link">
+    Double-DES
+  </a>
+  
+    <nav class="md-nav" aria-label="Double-DES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mitm" class="md-nav__link">
+    MITM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triple-des" class="md-nav__link">
+    Triple-DES
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aes" class="md-nav__link">
+    AES
+  </a>
+  
+    <nav class="md-nav" aria-label="AES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aes_1" class="md-nav__link">
+    AES
+  </a>
+  
+    <nav class="md-nav" aria-label="AES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#state" class="md-nav__link">
+    State
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subbytes" class="md-nav__link">
+    SubBytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shiftrows" class="md-nav__link">
+    ShiftRows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixcolumns" class="md-nav__link">
+    MixColumns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    工作模式
+  </a>
+  
+    <nav class="md-nav" aria-label="工作模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ecb" class="md-nav__link">
+    ECB 模式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cbc" class="md-nav__link">
+    CBC 模式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cfb" class="md-nav__link">
+    CFB 模式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ofb" class="md-nav__link">
+    OFB 模式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ctr" class="md-nav__link">
+    CTR 模式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    操作模式对比
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    填充
+  </a>
+  
+    <nav class="md-nav" aria-label="填充">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    填充方法
+  </a>
+  
+    <nav class="md-nav" aria-label="填充方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    比特填充
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    字节填充
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#padding-oracle" class="md-nav__link">
+    Padding Oracle 攻击
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ciphertext-stealing" class="md-nav__link">
+    Ciphertext Stealing
+  </a>
+  
+    <nav class="md-nav" aria-label="Ciphertext Stealing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ecb-cts" class="md-nav__link">
+    ECB-CTS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cbc-cts" class="md-nav__link">
+    CBC-CTS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xts-aes" class="md-nav__link">
+    XTS-AES
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    通用密码分析
+  </a>
+  
+    <nav class="md-nav" aria-label="通用密码分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    时间存储折中攻击
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aes_2" class="md-nav__link">
+    AES 密码分析
+  </a>
+  
+    <nav class="md-nav" aria-label="AES 密码分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    积分攻击
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    不可能差分攻击
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/lzy-tony/csnotes/edit/master/docs/cs/cryptography/block_cipher.md" title="编辑此页" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+<h1 id="_1">分组密码<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">概述<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">迭代密码<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>定义一个轮函数和一个密钥编排方案，一个明文的加密将经过 <span class="arithmatex"><span class="MathJax_Preview">N_r</span><script type="math/tex">N_r</script></span> 轮类似的过程。</p>
+<p>设 <span class="arithmatex"><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span> 是一个确定长度的随机二元密钥，用 <span class="arithmatex"><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span> 来生成 <span class="arithmatex"><span class="MathJax_Preview">N_r</span><script type="math/tex">N_r</script></span> 个轮密钥得到密钥编排方案 <span class="arithmatex"><span class="MathJax_Preview">(K^1, \dots, K^{N_r})</span><script type="math/tex">(K^1, \dots, K^{N_r})</script></span> 就是密钥编排方案。</p>
+<p>轮函数 <span class="arithmatex"><span class="MathJax_Preview">g</span><script type="math/tex">g</script></span> 以轮密钥 <span class="arithmatex"><span class="MathJax_Preview">(K^r)</span><script type="math/tex">(K^r)</script></span> 和当前状态 <span class="arithmatex"><span class="MathJax_Preview">w^{r - 1}</span><script type="math/tex">w^{r - 1}</script></span> 作为它的两个输入，下一轮状态定义为 <span class="arithmatex"><span class="MathJax_Preview">w^r = g(w^{r - 1}, K^r)</span><script type="math/tex">w^r = g(w^{r - 1}, K^r)</script></span>，整个加密过程为</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\begin{align}
+w^0 &amp; \leftarrow x \\
+w^1 &amp; \leftarrow g(w^0, K^1) \\
+&amp; \vdots \\
+w^{N_r - 1} &amp; \leftarrow g(w^{N_r - 2}, K^{N_r - 1}) \\
+w^{N_r} &amp; \leftarrow g(w^{N_r - 1}, K^{N_r}) \\
+y &amp; \leftarrow w^{N_r}
+\end{align}
+</div>
+<script type="math/tex; mode=display">
+\begin{align}
+w^0 & \leftarrow x \\
+w^1 & \leftarrow g(w^0, K^1) \\
+& \vdots \\
+w^{N_r - 1} & \leftarrow g(w^{N_r - 2}, K^{N_r - 1}) \\
+w^{N_r} & \leftarrow g(w^{N_r - 1}, K^{N_r}) \\
+y & \leftarrow w^{N_r}
+\end{align}
+</script>
+</div>
+<h3 id="_4">轮函数<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>基本原则：</p>
+<ul>
+<li>扩散：扩散就是让明文中的每一位影响密文中的许多位，或者说让密文中的每一位受明文中的许多位的影响。这样可以隐蔽明文的统计特性。</li>
+</ul>
+<blockquote>
+<p>线性变换、置换、移位等等。</p>
+</blockquote>
+<ul>
+<li>混淆：是指让密文和密钥之间的统计关系变得复杂，使得敌手不能通过密文的统计关系，推测出密钥的统计关系 （非线性替换）。</li>
+</ul>
+<blockquote>
+<p>代换表、乘法与异或、加法与异或等等。</p>
+</blockquote>
+<h2 id="-">代换-置换网络<a class="headerlink" href="#-" title="Permanent link">&para;</a></h2>
+<p>密码体制：设 <span class="arithmatex"><span class="MathJax_Preview">l, m, N_r</span><script type="math/tex">l, m, N_r</script></span> 都为正整数，<span class="arithmatex"><span class="MathJax_Preview">\pi_s: \{0, 1\}^l \rightarrow \{0, 1\}^l</span><script type="math/tex">\pi_s: \{0, 1\}^l \rightarrow \{0, 1\}^l</script></span> 与 <span class="arithmatex"><span class="MathJax_Preview">\pi_p: \{1, \dots, lm\} \rightarrow \{1, \dots, lm\}</span><script type="math/tex">\pi_p: \{1, \dots, lm\} \rightarrow \{1, \dots, lm\}</script></span> 均为置换。设 <span class="arithmatex"><span class="MathJax_Preview">\mathcal P, \mathcal C = \{0, 1\}^{lm}, \mathcal K \subseteq (\{0, 1\}^{lm})^{N_r + 1}</span><script type="math/tex">\mathcal P, \mathcal C = \{0, 1\}^{lm}, \mathcal K \subseteq (\{0, 1\}^{lm})^{N_r + 1}</script></span> 是由初始密钥 <span class="arithmatex"><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span> 用密钥编排算法生成的所有可能密钥编排方案的集合。对一个密钥编排方案 <span class="arithmatex"><span class="MathJax_Preview">(K^1, \dots, K^{N_r + 1})</span><script type="math/tex">(K^1, \dots, K^{N_r + 1})</script></span>，使用如下算法加密明文 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>。</p>
+<div class="highlight"><pre><span></span><code>w^0 &lt;- x
+for r &lt;- 1 to Nr - 1
+do
+    u^r &lt;- w^{r - 1} oplus K^r
+    for i &lt;- 1 to m
+        do v^r_i &lt;- pi_s(u^r_i)
+    w^r &lt;- (v^r_{pi(1)}, ..., v^r_{pi(p)})
+u^{Nr} &lt;- w^{Nr - 1} oplus K^{Nr}
+for i &lt;- 1 to m
+    do v^{Nr}_i &lt;- pi_s(u^{Nr}_{i})
+y &lt;- v^{Nr} oplus K^{Nr + 1}
+output(y)
+</code></pre></div>
+<p><img alt="avatar" src="../img/spn.png" /></p>
+<ul>
+<li>S盒属性：改变输入的1比特，输出比特中有一半的比特改变，输出的每一个比特依赖输入的所有比特。</li>
+<li>P盒属性：好的P置换是使得S盒的输出比特分布到下一轮的尽可能多的S盒。</li>
+</ul>
+<p>此过程对应于扩散与混淆，使得明文的统计特性变得复杂。</p>
+<p>第一轮和最后一轮是密码“白化”的过程，使得攻击者在不知道密钥的情况下不能直接进行加密或解密。</p>
+<h2 id="_5">线性密码分析<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="_6">偏差<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>令 <span class="arithmatex"><span class="MathJax_Preview">P(\boldsymbol X_i = 0) = p_i</span><script type="math/tex">P(\boldsymbol X_i = 0) = p_i</script></span>，则 <span class="arithmatex"><span class="MathJax_Preview">P(\boldsymbol X_i = 1) = 1 - p_i</span><script type="math/tex">P(\boldsymbol X_i = 1) = 1 - p_i</script></span>，定义 <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol X_i</span><script type="math/tex">\boldsymbol X_i</script></span> 的偏差 <span class="arithmatex"><span class="MathJax_Preview">\varepsilon = p_i - \frac 1 2</span><script type="math/tex">\varepsilon = p_i - \frac 1 2</script></span>。</p>
+<h3 id="_7">堆积引理<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>引理：设 <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol X_{i_1}, \dots, \boldsymbol X_{i_k}</span><script type="math/tex">\boldsymbol X_{i_1}, \dots, \boldsymbol X_{i_k}</script></span> 是**独立**随机变量，<span class="arithmatex"><span class="MathJax_Preview">\varepsilon_{i_1, \dots, i_k}</span><script type="math/tex">\varepsilon_{i_1, \dots, i_k}</script></span> 表示随机变量 <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol X_{i_1} \oplus \dots \oplus \boldsymbol X_{i_k}</span><script type="math/tex">\boldsymbol X_{i_1} \oplus \dots \oplus \boldsymbol X_{i_k}</script></span> 的偏差，则</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\varepsilon_{i_1, \dots, i_k}  = 2^{k - 1} \prod \limits_{j = 1}^k \varepsilon_{i_j}
+</div>
+<script type="math/tex; mode=display">
+\varepsilon_{i_1, \dots, i_k}  = 2^{k - 1} \prod \limits_{j = 1}^k \varepsilon_{i_j}
+</script>
+</div>
+<p>推论：设 <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol X_{i_1}, \dots, \boldsymbol X_{i_k}</span><script type="math/tex">\boldsymbol X_{i_1}, \dots, \boldsymbol X_{i_k}</script></span> 是独立随机变量，<span class="arithmatex"><span class="MathJax_Preview">\varepsilon_{i_1, \dots, i_k}</span><script type="math/tex">\varepsilon_{i_1, \dots, i_k}</script></span> 表示随机变量 <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol X_{i_1} \oplus \dots \oplus \boldsymbol X_{i_k}</span><script type="math/tex">\boldsymbol X_{i_1} \oplus \dots \oplus \boldsymbol X_{i_k}</script></span> 的偏差，若对于某 <span class="arithmatex"><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span>，有 <span class="arithmatex"><span class="MathJax_Preview">\varepsilon_{i_j} = 0</span><script type="math/tex">\varepsilon_{i_j} = 0</script></span>，则 <span class="arithmatex"><span class="MathJax_Preview">\mathcal E_{i_1, \dots, i_k} = 0</span><script type="math/tex">\mathcal E_{i_1, \dots, i_k} = 0</script></span>。</p>
+<h3 id="_8">线性逼近<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>根据结果计算偏差较大的比特组合，寻找出S盒中的几组线性关系。</p>
+<h3 id="_9">线性攻击<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>针对上一节中得到的若干线性逼近方程组。遍历所有的相关密钥比特，计算对于已知明密文对异或和为0的次数，寻找偏差最接近线性逼近偏差的密钥。</p>
+<p><img alt="" src="../img/linear_attack.png" /></p>
+<h2 id="_10">差分密码分析<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>差分密码分析主要通过差分对的方式对两个输入的异或和两输出的异或进行分析，以去除嵌入密码对于加密过程的影响，找到“不变”的因素。</p>
+<h3 id="_11">差分链<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>定义：设 <span class="arithmatex"><span class="MathJax_Preview">\pi_s: \{0, 1\}^m \rightarrow \{0, 1\}^n</span><script type="math/tex">\pi_s: \{0, 1\}^m \rightarrow \{0, 1\}^n</script></span> 为一个S盒。考虑长为 <span class="arithmatex"><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span> 的有序比特串对 <span class="arithmatex"><span class="MathJax_Preview">(x, x^*)</span><script type="math/tex">(x, x^*)</script></span>，称S盒的输入异或为 <span class="arithmatex"><span class="MathJax_Preview">x \oplus x^*</span><script type="math/tex">x \oplus x^*</script></span>，S盒的输出异或为 <span class="arithmatex"><span class="MathJax_Preview">\pi_s(x) \oplus \pi_s(x^*)</span><script type="math/tex">\pi_s(x) \oplus \pi_s(x^*)</script></span>。</p>
+<p>定义：对任何 <span class="arithmatex"><span class="MathJax_Preview">x' \in \{0, 1\}^m</span><script type="math/tex">x' \in \{0, 1\}^m</script></span>，定义集合 <span class="arithmatex"><span class="MathJax_Preview">\Delta(x')</span><script type="math/tex">\Delta(x')</script></span> 为包含所有具有输入异或值 <span class="arithmatex"><span class="MathJax_Preview">x'</span><script type="math/tex">x'</script></span> 的有序对 <span class="arithmatex"><span class="MathJax_Preview">(x, x')</span><script type="math/tex">(x, x')</script></span>。</p>
+<blockquote>
+<p>注：集合 <span class="arithmatex"><span class="MathJax_Preview">\Delta(x')</span><script type="math/tex">\Delta(x')</script></span> 共有 <span class="arithmatex"><span class="MathJax_Preview">2^m</span><script type="math/tex">2^m</script></span> 个元素。</p>
+</blockquote>
+<p>定义：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+N_D(x', y') = |\{(x, x') \in \Delta(x'): \pi_s(x) \oplus \pi_s(x^*) = y' \}|
+</div>
+<script type="math/tex; mode=display">
+N_D(x', y') = |\{(x, x') \in \Delta(x'): \pi_s(x) \oplus \pi_s(x^*) = y' \}|
+</script>
+</div>
+<p>定义：异或扩散率</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+R_p(a', b') = \frac{N_D(a', b')}{2^m}
+</div>
+<script type="math/tex; mode=display">
+R_p(a', b') = \frac{N_D(a', b')}{2^m}
+</script>
+</div>
+<p>将异或在不同轮中形成差分链，并且假设差分链中不同扩散率彼此独立，我们可以得到差分链的扩散率。</p>
+<h3 id="_12">差分攻击<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../img/differential_attack.png" /></p>
+<h2 id="des">DES<a class="headerlink" href="#des" title="Permanent link">&para;</a></h2>
+<h3 id="feistel">Feistel 结构<a class="headerlink" href="#feistel" title="Permanent link">&para;</a></h3>
+<p>在 Feistel 型轮函数中，<span class="arithmatex"><span class="MathJax_Preview">g</span><script type="math/tex">g</script></span> 有以下形式：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+g(L^{i - 1}, R^{i - 1}, K^i) = (L^i, R^i)
+</div>
+<script type="math/tex; mode=display">
+g(L^{i - 1}, R^{i - 1}, K^i) = (L^i, R^i)
+</script>
+</div>
+<p>其中</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\begin{cases}
+L^i = R^{i - 1} \\
+R^i = L^{i - 1} \oplus f(R^{i - 1}, K^i)
+\end{cases}
+</div>
+<script type="math/tex; mode=display">
+\begin{cases}
+L^i = R^{i - 1} \\
+R^i = L^{i - 1} \oplus f(R^{i - 1}, K^i)
+\end{cases}
+</script>
+</div>
+<p>这一结构下，<span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> 不需要是可逆的，因为给定轮密钥，Feistel 轮函数一定是可逆的</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\begin{cases}
+L^{i - 1} = R^i \oplus f(L^i, K^i) \\
+R^{i - 1} = L^i
+\end{cases}
+</div>
+<script type="math/tex; mode=display">
+\begin{cases}
+L^{i - 1} = R^i \oplus f(L^i, K^i) \\
+R^{i - 1} = L^i
+\end{cases}
+</script>
+</div>
+<p>总的加密流程为：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\begin{align}
+&amp; (L_0, R_0) = P \\ \\
+&amp; L_1 = R_0 \\
+&amp; R_1 = L_0 \oplus F(K_1, R_0) \\
+&amp; \dots \\
+&amp; L_r = R_{r - 1} \\
+&amp; R_r = L_{r - 1} \oplus F(K_r, R_{r - 1}) \\ \\
+&amp; C = (R_r, L_r)
+\end{align}
+</div>
+<script type="math/tex; mode=display">
+\begin{align}
+& (L_0, R_0) = P \\ \\
+& L_1 = R_0 \\
+& R_1 = L_0 \oplus F(K_1, R_0) \\
+& \dots \\
+& L_r = R_{r - 1} \\
+& R_r = L_{r - 1} \oplus F(K_r, R_{r - 1}) \\ \\
+& C = (R_r, L_r)
+\end{align}
+</script>
+</div>
+<p>加解密使用同一套逻辑，除了密钥使用顺序不同。</p>
+<p>安全性：如果轮函数是安全的伪随机函数，将轮密钥 <span class="arithmatex"><span class="MathJax_Preview">S_i</span><script type="math/tex">S_i</script></span> 作为种子，则由 Feistel 结构构造的分组密码3轮就是一个伪随机置换，4轮是一个强的伪随机置换（即使允许敌手访问逆置换）。</p>
+<h3 id="des_1">DES<a class="headerlink" href="#des_1" title="Permanent link">&para;</a></h3>
+<p>DES 是一个16轮的 Feistel 型密码，分组长度64，密钥长度56。</p>
+<p><img alt="avatar" src="../img/des.png" /></p>
+<h4 id="_13">初始置换<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
+<p>在进行16轮加密之前，先对明文进行一个固定的初始置换 <span class="arithmatex"><span class="MathJax_Preview">\text{IP}(x) = L^0R^0</span><script type="math/tex">\text{IP}(x) = L^0R^0</script></span>。</p>
+<p>在16轮加密后，对比特串 <span class="arithmatex"><span class="MathJax_Preview">R^{16}L^{16}</span><script type="math/tex">R^{16}L^{16}</script></span> 做逆置换 <span class="arithmatex"><span class="MathJax_Preview">\text{IP}^{-1}</span><script type="math/tex">\text{IP}^{-1}</script></span> 给出密文 <span class="arithmatex"><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span>，即 <span class="arithmatex"><span class="MathJax_Preview">y = \text{IP}^{-1}(R^{16}L^{16})</span><script type="math/tex">y = \text{IP}^{-1}(R^{16}L^{16})</script></span>。</p>
+<h4 id="_14">加密轮<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="../img/DES_round.png" /></p>
+<h4 id="f">f 函数<a class="headerlink" href="#f" title="Permanent link">&para;</a></h4>
+<p>函数 <span class="arithmatex"><span class="MathJax_Preview">f: \{0, 1\}^{32} \times \{0, 1\}^{48} \rightarrow \{0, 1\}^{32}</span><script type="math/tex">f: \{0, 1\}^{32} \times \{0, 1\}^{48} \rightarrow \{0, 1\}^{32}</script></span>。</p>
+<p><img alt="" src="../img/DES_f.png" /></p>
+<p>计算 <span class="arithmatex"><span class="MathJax_Preview">f(A, J)</span><script type="math/tex">f(A, J)</script></span> 的过程为</p>
+<ol>
+<li>
+<p>首先固定扩展函数 <span class="arithmatex"><span class="MathJax_Preview">E</span><script type="math/tex">E</script></span>，将 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 扩展为一个48比特串。</p>
+</li>
+<li>
+<p>计算 <span class="arithmatex"><span class="MathJax_Preview">E(A) \oplus J</span><script type="math/tex">E(A) \oplus J</script></span>，并且将结果写作8个6比特串的并联 <span class="arithmatex"><span class="MathJax_Preview">B = B_1\dots B_8</span><script type="math/tex">B = B_1\dots B_8</script></span>。</p>
+</li>
+<li>
+<p>使用8个S盒，每一个S盒</p>
+</li>
+</ol>
+<p>$$
+   S_i: {0, 1}^6 \rightarrow (0, 1)^4
+   $$</p>
+<p>一般用一个 <span class="arithmatex"><span class="MathJax_Preview">4 \times 16</span><script type="math/tex">4 \times 16</script></span> 的矩阵描述，用 <span class="arithmatex"><span class="MathJax_Preview">b_1b_6</span><script type="math/tex">b_1b_6</script></span> 表示行的二进制表示 <span class="arithmatex"><span class="MathJax_Preview">r</span><script type="math/tex">r</script></span>；用 <span class="arithmatex"><span class="MathJax_Preview">b_2b_3b_4b_5</span><script type="math/tex">b_2b_3b_4b_5</script></span> 表示列的二进制表示 <span class="arithmatex"><span class="MathJax_Preview">c</span><script type="math/tex">c</script></span>，则 <span class="arithmatex"><span class="MathJax_Preview">S_j(B_j) = S_j(r, c)</span><script type="math/tex">S_j(B_j) = S_j(r, c)</script></span>。</p>
+<ol>
+<li>根据置换 <span class="arithmatex"><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span> 对 <span class="arithmatex"><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span> 进行置换。</li>
+</ol>
+<p>扩展函数 <span class="arithmatex"><span class="MathJax_Preview">E</span><script type="math/tex">E</script></span>：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>32</td>
+<td><strong>1</strong></td>
+<td><strong>2</strong></td>
+<td><strong>3</strong></td>
+<td><strong>4</strong></td>
+<td>5</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>5</strong></td>
+<td><strong>6</strong></td>
+<td><strong>7</strong></td>
+<td><strong>8</strong></td>
+<td>9</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>9</strong></td>
+<td><strong>10</strong></td>
+<td><strong>11</strong></td>
+<td><strong>12</strong></td>
+<td>13</td>
+</tr>
+<tr>
+<td>12</td>
+<td><strong>13</strong></td>
+<td><strong>14</strong></td>
+<td><strong>15</strong></td>
+<td><strong>16</strong></td>
+<td>17</td>
+</tr>
+<tr>
+<td>16</td>
+<td><strong>17</strong></td>
+<td><strong>18</strong></td>
+<td><strong>19</strong></td>
+<td><strong>20</strong></td>
+<td>21</td>
+</tr>
+<tr>
+<td>20</td>
+<td><strong>21</strong></td>
+<td><strong>22</strong></td>
+<td><strong>23</strong></td>
+<td><strong>24</strong></td>
+<td>25</td>
+</tr>
+<tr>
+<td>24</td>
+<td><strong>25</strong></td>
+<td><strong>26</strong></td>
+<td><strong>27</strong></td>
+<td><strong>28</strong></td>
+<td>29</td>
+</tr>
+<tr>
+<td>28</td>
+<td><strong>29</strong></td>
+<td><strong>30</strong></td>
+<td><strong>31</strong></td>
+<td><strong>32</strong></td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_15">密钥生成<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="../img/DES-key-schedule.png" /></p>
+<p>从64位中首先取出56位，剩余8位弃用或用作奇偶性检验。</p>
+<p>将56位分为两个28位，每轮进行一定的移位并取出其中的24位。</p>
+<ul>
+<li>当 <span class="arithmatex"><span class="MathJax_Preview">i = 1, 2, 9, 16</span><script type="math/tex">i = 1, 2, 9, 16</script></span> 时，移位数为1；</li>
+<li>其他时候移位数为2。</li>
+</ul>
+<h3 id="double-des">Double-DES<a class="headerlink" href="#double-des" title="Permanent link">&para;</a></h3>
+<p>DES 56位的密钥空间太小，因此改进方法可以引进多轮 DES 加密。</p>
+<p>最直观的方法是使用两轮 DES 加密：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+C = E_{k_2}(E_{k_1}(P))
+</div>
+<script type="math/tex; mode=display">
+C = E_{k_2}(E_{k_1}(P))
+</script>
+</div>
+<h4 id="mitm">MITM<a class="headerlink" href="#mitm" title="Permanent link">&para;</a></h4>
+<p>中间相遇攻击。</p>
+<p>可以有效攻击多个密码体制组合进行加密的情况。</p>
+<p>构造两个集合 <span class="arithmatex"><span class="MathJax_Preview">I = \{E_{k_1} (P) \}, J = \{D_{k_2}(C) \}</span><script type="math/tex">I = \{E_{k_1} (P) \}, J = \{D_{k_2}(C) \}</script></span>，即可利用生日攻击寻找碰撞。</p>
+<p>加解密运算时间 <span class="arithmatex"><span class="MathJax_Preview">2^{57}</span><script type="math/tex">2^{57}</script></span>，存储空间 <span class="arithmatex"><span class="MathJax_Preview">2^{56}</span><script type="math/tex">2^{56}</script></span>。</p>
+<h3 id="triple-des">Triple-DES<a class="headerlink" href="#triple-des" title="Permanent link">&para;</a></h3>
+<p>为避免 MITM 的攻击提出 Triple-DES。</p>
+<p>加密：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+C = E_{k_3}(D_{k_2}(E_{k_1}(P)))
+</div>
+<script type="math/tex; mode=display">
+C = E_{k_3}(D_{k_2}(E_{k_1}(P)))
+</script>
+</div>
+<p>解密：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+P = D_{k_1}(E_{k_2}(D_{k_3}(C)))
+</div>
+<script type="math/tex; mode=display">
+P = D_{k_1}(E_{k_2}(D_{k_3}(C)))
+</script>
+</div>
+<h2 id="aes">AES<a class="headerlink" href="#aes" title="Permanent link">&para;</a></h2>
+<h3 id="aes_1">AES<a class="headerlink" href="#aes_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>给定明文 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>，将 State 初始化为 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>，并执行 AddRoundKey 操作，将 RoundKey 与 State 异或。</li>
+<li>对前 <span class="arithmatex"><span class="MathJax_Preview">N_r - 1</span><script type="math/tex">N_r - 1</script></span> 轮中的每一轮，用S盒进行一次代换操作 SubBytes，对 State 做置换 ShiftRows、MixColumns；然后进行 AddRoundKey。</li>
+<li>依次进行 SubBytes、ShiftRows、AddRoundKey。</li>
+<li>将 State 定义为密文 <span class="arithmatex"><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span>。</li>
+</ol>
+<h4 id="state">State<a class="headerlink" href="#state" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="../img/AES_state.png" /></p>
+<h4 id="subbytes">SubBytes<a class="headerlink" href="#subbytes" title="Permanent link">&para;</a></h4>
+<p>AES 的S盒可以用代数的方法进行定义，置换 <span class="arithmatex"><span class="MathJax_Preview">\pi_s</span><script type="math/tex">\pi_s</script></span> 涉及有限域</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\mathbb F_{2^8} = \mathbb Z_2[x] / (x^8 + x^4 + x^3 + x + 1)
+</div>
+<script type="math/tex; mode=display">
+\mathbb F_{2^8} = \mathbb Z_2[x] / (x^8 + x^4 + x^3 + x + 1)
+</script>
+</div>
+<p>对于8个输入比特 <span class="arithmatex"><span class="MathJax_Preview">a_7a_6 \dots a_1a_0</span><script type="math/tex">a_7a_6 \dots a_1a_0</script></span>，求其对应的多项式在有限域 <span class="arithmatex"><span class="MathJax_Preview">\mathbb F_{2^8}</span><script type="math/tex">\mathbb F_{2^8}</script></span> 中的乘法逆元（如果为0则不变）得到新的 <span class="arithmatex"><span class="MathJax_Preview">a_7 a_6 \dots a_1a_0</span><script type="math/tex">a_7 a_6 \dots a_1a_0</script></span>，令 <span class="arithmatex"><span class="MathJax_Preview">c_7 \dots c_0 = 01100011</span><script type="math/tex">c_7 \dots c_0 = 01100011</script></span>。</p>
+<p>令 <span class="arithmatex"><span class="MathJax_Preview">b_i = (a_i + a_{i + 4} + a_{i + 5} + a_{i + 6} + a_{i + 7} + c_i) \mod 2</span><script type="math/tex">b_i = (a_i + a_{i + 4} + a_{i + 5} + a_{i + 6} + a_{i + 7} + c_i) \mod 2</script></span>。</p>
+<p>最终得到 <span class="arithmatex"><span class="MathJax_Preview">b_7 b_6 \dots b_1 b_0</span><script type="math/tex">b_7 b_6 \dots b_1 b_0</script></span>。</p>
+<h4 id="shiftrows">ShiftRows<a class="headerlink" href="#shiftrows" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="../img/AES_ShiftRows.png" /></p>
+<h4 id="mixcolumns">MixColumns<a class="headerlink" href="#mixcolumns" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="../img/AES_MixColumn.png" /></p>
+<p>其中乘域元素 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">x + 1</span><script type="math/tex">x + 1</script></span> 分别对应00000010和00000011。</p>
+<p>或者，该过程可以写成矩阵形式，对于每一列中的元素 <span class="arithmatex"><span class="MathJax_Preview">\begin{bmatrix} s_{0, j} \\ s_{1, j} \\ s_{2, j} \\ s_{3, j} \end{bmatrix}</span><script type="math/tex">\begin{bmatrix} s_{0, j} \\ s_{1, j} \\ s_{2, j} \\ s_{3, j} \end{bmatrix}</script></span>（<span class="arithmatex"><span class="MathJax_Preview">0 \le j \le 3</span><script type="math/tex">0 \le j \le 3</script></span>），可以计算得到新的列为：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\begin{bmatrix} s_{0, j}' \\ s_{1, j}' \\ s_{2, j}' \\ s_{3, j}' \end{bmatrix} =
+\begin{bmatrix} 2 &amp; 3 &amp; 1 &amp; 1 \\ 1 &amp; 2 &amp; 3 &amp; 1 \\ 1 &amp; 1 &amp; 2 &amp; 3 \\ 3 &amp; 1 &amp; 1 &amp; 2 \end{bmatrix}
+\begin{bmatrix} s_{0, j} \\ s_{1, j} \\ s_{2, j} \\ s_{3, j} \end{bmatrix}
+</div>
+<script type="math/tex; mode=display">
+\begin{bmatrix} s_{0, j}' \\ s_{1, j}' \\ s_{2, j}' \\ s_{3, j}' \end{bmatrix} =
+\begin{bmatrix} 2 & 3 & 1 & 1 \\ 1 & 2 & 3 & 1 \\ 1 & 1 & 2 & 3 \\ 3 & 1 & 1 & 2 \end{bmatrix}
+\begin{bmatrix} s_{0, j} \\ s_{1, j} \\ s_{2, j} \\ s_{3, j} \end{bmatrix}
+</script>
+</div>
+<h2 id="_16">工作模式<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<h3 id="ecb">ECB 模式<a class="headerlink" href="#ecb" title="Permanent link">&para;</a></h3>
+<p>电子密码本模式。</p>
+<p>模式：将明文的 <span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span> 个分组独立地使用同一密钥 <span class="arithmatex"><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span> 加密和解密。</p>
+<p>优点：</p>
+<ul>
+<li>实现简单；</li>
+<li>不同明文分组的加密可并行实施，尤其是硬件实现时速度很快。</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>不同明文分组之间的加密独立进行，故保留了单表代换的缺点，造成相同明文分组对应相同密文分组，因而不能隐藏明文分组的统计规律和结构规律。</li>
+</ul>
+<p><img alt="" src="../img/ECB.png" /></p>
+<p>应用场合：</p>
+<ul>
+<li>用于随机数的加密保护；</li>
+<li>用于单分组明文的加密。</li>
+</ul>
+<h3 id="cbc">CBC 模式<a class="headerlink" href="#cbc" title="Permanent link">&para;</a></h3>
+<p>密码分组链接模式。</p>
+<p>模式：每个明文分组在加密之前都要与以前的密文分组进行异或。第一个分组之前没有密文，故要用到一个伪分组 <span class="arithmatex"><span class="MathJax_Preview">IV</span><script type="math/tex">IV</script></span>。</p>
+<p><img alt="" src="../img/CBC.png" /></p>
+<p>加密：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+C_0 = IV \\
+C_i = E_k(P_i \oplus C_{i - 1})
+</div>
+<script type="math/tex; mode=display">
+C_0 = IV \\
+C_i = E_k(P_i \oplus C_{i - 1})
+</script>
+</div>
+<p>解密：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+C_0 = IV \\
+P_i = D_k(C_i) \oplus C_{i - 1}
+</div>
+<script type="math/tex; mode=display">
+C_0 = IV \\
+P_i = D_k(C_i) \oplus C_{i - 1}
+</script>
+</div>
+<p>优点：</p>
+<ul>
+<li>明文块的统计特性得到了隐蔽。</li>
+<li>具有有限的（两步）错误传播特性：一个密文块的错误将导致两个密文块不能正确解密。</li>
+<li>具有自同步功能：密文出现丢块和错块不影响后续密文块的解密。若从第 <span class="arithmatex"><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span> 块起密文块正确，则第 <span class="arithmatex"><span class="MathJax_Preview">t+1</span><script type="math/tex">t+1</script></span> 个明文块就能正确求出。</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>加密不能并行处理（解密可以）。</li>
+<li>消息是分组长度的整数倍（需要padding）。</li>
+</ul>
+<h3 id="cfb">CFB 模式<a class="headerlink" href="#cfb" title="Permanent link">&para;</a></h3>
+<p>密码反馈模式。</p>
+<p>模式：</p>
+<p><img alt="" src="../img/CFB_encrypt.png" /></p>
+<p><img alt="" src="../img/CFB_decrypt.png" /></p>
+<blockquote>
+<p>注：<span class="arithmatex"><span class="MathJax_Preview">S_i</span><script type="math/tex">S_i</script></span> 为移位寄存器。 </p>
+<p>注：CFB 实际上是将加密算法作为一个密钥流产生器。</p>
+</blockquote>
+<p>优点：</p>
+<ul>
+<li>适用于每次处理 <span class="arithmatex"><span class="MathJax_Preview">r</span><script type="math/tex">r</script></span> 比特明文块的特定需求的加密情形，能灵活适应数据各格式的需要。</li>
+<li>具有有限步的错误传播（<span class="arithmatex"><span class="MathJax_Preview">\frac n r</span><script type="math/tex">\frac n r</script></span> 步），可用于认证。</li>
+<li>具有自同步功能。</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>加密效率低。</li>
+<li>加密不能并行（解密可以并行）。</li>
+<li>错误传播：</li>
+<li>明文或IV的一个比特的变化影响密文所有比特，但解密时除原有误的一组以外其它明文都能正确恢复。</li>
+<li>密文里的一个错误会引起明文的一个单独错误，此处错误会进入移位寄存器直到被移除。</li>
+</ul>
+<p>应用：</p>
+<ul>
+<li>不能改变明文长度：如数据库加密等特殊情况要求加密时不能改变明文的字节长度，这时就要以明文字节为单位进行加密。</li>
+</ul>
+<h3 id="ofb">OFB 模式<a class="headerlink" href="#ofb" title="Permanent link">&para;</a></h3>
+<p>输出反馈模式。</p>
+<p>在结构上与 CFB 模式类似，但反馈内容是分组密码输出的密钥流而不是密文。</p>
+<blockquote>
+<p>注：相当于利用分组密码的结构实现了序列密码。</p>
+</blockquote>
+<p><img alt="" src="../img/OFB.png" /></p>
+<p>优点：</p>
+<ul>
+<li>密文每一个分组都独立于先前的分组，不具有错误传播特性。</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>不能实现报文的完整性认证。</li>
+<li>不具有自同步能力。</li>
+<li>密钥序列的周期可能有短周期现象。</li>
+</ul>
+<p>应用：</p>
+<ul>
+<li>明文的冗余度特别大，信道不好但不易丢信号，明文信号出些错误也不影响效果的情形。如图像加密、语音加密等。</li>
+</ul>
+<h3 id="ctr">CTR 模式<a class="headerlink" href="#ctr" title="Permanent link">&para;</a></h3>
+<p>计数器模式。</p>
+<p>模式：</p>
+<p><img alt="" src="../img/CTR.png" /></p>
+<p>特点：</p>
+<ul>
+<li>与 OFB 模式一样，创建了独立于以前密文分组的密钥流，但是不运用反馈。</li>
+</ul>
+<blockquote>
+<p>注：CTR 模式不需要填充，原因是最后一个即使不完整，也可以通过只截断密钥的前 <span class="arithmatex"><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span> 位完成加密。</p>
+</blockquote>
+<p>优点：</p>
+<ul>
+<li>处理效率高：能够对多块报文的加密和解密进行并行处理。</li>
+<li>随机访问：密文分组的处理与其它密文无关实现简单。</li>
+</ul>
+<p>缺点：可能导致明文攻击。</p>
+<h3 id="_17">操作模式对比<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>操作模式</th>
+<th>加密</th>
+<th>结果类型</th>
+<th>数据单位大小</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ECB</td>
+<td>每一个 <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> 比特的分组都要用相同的密码密钥独立进行加密</td>
+<td>分组密码</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span></td>
+</tr>
+<tr>
+<td>CBC</td>
+<td>与 EBC 相同，不过每一个分组都要用前面的密文进行异或</td>
+<td>分组密码</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span></td>
+</tr>
+<tr>
+<td>CFB</td>
+<td>每一个 <span class="arithmatex"><span class="MathJax_Preview">r</span><script type="math/tex">r</script></span> 比特的分组都要用一个 <span class="arithmatex"><span class="MathJax_Preview">r</span><script type="math/tex">r</script></span> 比特的密钥进行异或，这个密钥是前面密文的一部分</td>
+<td>序列密码</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">r \le n</span><script type="math/tex">r \le n</script></span></td>
+</tr>
+<tr>
+<td>OFB</td>
+<td>与 CFB 相同，不过移位寄存器要用前面的 <span class="arithmatex"><span class="MathJax_Preview">r</span><script type="math/tex">r</script></span> 比特密钥更新</td>
+<td>序列密码</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">r \le n</span><script type="math/tex">r \le n</script></span></td>
+</tr>
+<tr>
+<td>CTR</td>
+<td>与 OFB 相同，不过用的是计数器而不是移位寄存器</td>
+<td>序列密码</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_18">填充<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<p>Motivation：如何加密一个部分分组？</p>
+<h3 id="_19">填充方法<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<h4 id="_20">比特填充<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h4>
+<p>在消息后面先填充一比特的1，然后填充若干比特的0，使其成为一个完整的消息分组。</p>
+<p>为了使得填充没有二义性，即使明文是一个完整的分组，也要填充。</p>
+<h4 id="_21">字节填充<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h4>
+<ul>
+<li>PKCS7：填充“需要填充部分“的字节数。</li>
+<li>ANSI X.923：填充0字节，最后一个字节填充padding的长度。</li>
+</ul>
+<h3 id="padding-oracle">Padding Oracle 攻击<a class="headerlink" href="#padding-oracle" title="Permanent link">&para;</a></h3>
+<p>利用padding格式和CBC加密的特性，攻击者可以借助服务器解密任何一个block的密文。</p>
+<ol>
+<li>枚举合法块IV的最后一字节（256种情况），找到padding oracle返回的合法状态，此时两者异或和为 <code>0x01</code>，可由IV的值反推解密后的中间值。</li>
+<li>此后可以反着枚举倒数第二、三……字节，分别找到 <code>0x02</code>、<code>0x03</code>……，由此可以反推解密后的中间值的每一位置。</li>
+</ol>
+<p><img alt="" src="../img/padding_oracle.png" /></p>
+<h3 id="ciphertext-stealing">Ciphertext Stealing<a class="headerlink" href="#ciphertext-stealing" title="Permanent link">&para;</a></h3>
+<p>对于分组密码工作模式，可以通过 Ciphertext Stealing 保证密文和明文长度相同。</p>
+<h4 id="ecb-cts">ECB-CTS<a class="headerlink" href="#ecb-cts" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="../img/ECB_CTS.png" /></p>
+<h4 id="cbc-cts">CBC-CTS<a class="headerlink" href="#cbc-cts" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="../img/CBC_CTS_encrypt.png" /></p>
+<p><img alt="" src="../img/CBC_CTS_decrypt.png" /></p>
+<h4 id="xts-aes">XTS-AES<a class="headerlink" href="#xts-aes" title="Permanent link">&para;</a></h4>
+<p>Ciphertext Stealing 应用于磁盘加密。</p>
+<p>满足磁盘加密的要求：</p>
+<ul>
+<li>加密后密文长度与明文长度相同。</li>
+<li>不同位置的相同的数据被加密成不同的密文。</li>
+</ul>
+<h2 id="_22">通用密码分析<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h2>
+<h3 id="_23">时间存储折中攻击<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
+<p>由穷尽密钥搜索攻击和查表攻击两种方法混合而成。</p>
+<p>预处理过程：计算 <span class="arithmatex"><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span> 个链，每个链长度为 <span class="arithmatex"><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span>，存储每条链的两端端点 <span class="arithmatex"><span class="MathJax_Preview">(SP_0, EP_0), \dots, (SP_{m - 1}, EP_{m - 1})</span><script type="math/tex">(SP_0, EP_0), \dots, (SP_{m - 1}, EP_{m - 1})</script></span>。</p>
+<p>攻击过程：计算 <span class="arithmatex"><span class="MathJax_Preview">X_0 = C, X_1 = E(P, X_0), \dots</span><script type="math/tex">X_0 = C, X_1 = E(P, X_0), \dots</script></span>。把 <span class="arithmatex"><span class="MathJax_Preview">X_i</span><script type="math/tex">X_i</script></span> 与存储的末节点 <span class="arithmatex"><span class="MathJax_Preview">EP_0, \dots, EP_{m - 1}</span><script type="math/tex">EP_0, \dots, EP_{m - 1}</script></span> 相比较，找的相符的可以从链起始端开始推得到明文。</p>
+<p><img alt="" src="../img/TMTO.png" /></p>
+<h2 id="aes_2">AES 密码分析<a class="headerlink" href="#aes_2" title="Permanent link">&para;</a></h2>
+<h3 id="_24">积分攻击<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<p>核心：寻找与随机不同的特征。</p>
+<p>固定其余比特遍历某一特定比特的输出，可以统计其与纯随机情况的区别。</p>
+<p><img alt="" src="../img/integral_attack.png" /></p>
+<h3 id="_25">不可能差分攻击<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h3>
+<p>寻找概率为0的差分路线。</p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      最后更新:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2022年6月28日</span>
+      
+    
+  </small>
+</div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            回到页面顶部
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="页脚">
+      
+        
+        <a href="../shannon/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Shannon 理论" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              Shannon 理论
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../hash/" class="md-footer__link md-footer__link--next" aria-label="下一页: Hash 函数" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              Hash 函数
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "navigation.tabs", "navigation.instant"], "search": "../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
