@@ -3,11 +3,13 @@ theme:
   name: 'material'
   language: 'zh'
   icon:
-    logo: material/memory
+    logo: material/library
     repo: fontawesome/brands/github
+  favicon: img/green_aleph.jpg
   features:
-    # - navigation.tabs
-    # - navigation.instant
+    - navigation.top
+    - navigation.tabs
+    - navigation.instant
   palette:
     - primary: teal
     - scheme: default
@@ -19,14 +21,23 @@ theme:
         icon: material/weather-sunny
         name: Switch to light mode
 
+repo_name: 'lzy-tony/csnotes'
+repo_url: 'https://github.com/lzy-tony/csnotes/'
+
 extra:
   pagetime: 'on'
 
 nav:
-  - index: index.md
-
-extra_css:
-  - stylesheets/extra.css
+  - 计算机科学:
+    - 密码学:
+      - 绪论: cs/cryptography/intro.md
+      - 数学前置: cs/cryptography/math.md
+      - 古典密码学: cs/cryptography/classic.md
+      - Shannon 理论: cs/cryptography/shannon.md
+      - 分组密码: cs/cryptography/block_cipher.md
+      - Hash 函数: cs/cryptography/hash.md
+      - 公钥密码体系: cs/cryptography/public_key.md
+      - 数字签名: cs/cryptography/signature.md
 
 extra_javascript:
   - 'https://cdn.jsdelivr.net/npm/mathjax@2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
@@ -39,6 +50,7 @@ plugins:
 
 markdown_extensions:
   - admonition
+  - attr_list
   - codehilite:
       guess_lang: false
       linenums: true
@@ -54,6 +66,7 @@ markdown_extensions:
   - pymdownx.critic
   - pymdownx.details
   - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:pymdownx.emoji.to_svg
   - pymdownx.inlinehilite
   - pymdownx.magiclink
