@@ -2,7 +2,7 @@
 
 ## 概述
 
-[CVPR2017] YOLO9000: Better, Faster, Stronger
+[CVPR2017][YOLOv2] YOLO9000: Better, Faster, Stronger
 
 
 

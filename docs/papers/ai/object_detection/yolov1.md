@@ -2,7 +2,7 @@
 
 ## 概述
 
-[CVPR2016] You Only Look Once: Unified, Real-Time Object Detection
+[CVPR2016][YOLOv1] You Only Look Once: Unified, Real-Time Object Detection
 
 
 ## Motivation
