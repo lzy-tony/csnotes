@@ -13,7 +13,7 @@
     
     
       
-        <title>R-CNN - csnotes</title>
+        <title>YOLOv3 - csnotes</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#r-cnn" class="md-skip">
+        <a href="#yolo-v3" class="md-skip">
           跳转至
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              R-CNN
+              YOLOv3
             
           </span>
         </div>
@@ -661,100 +661,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          R-CNN
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../r-cnn/" class="md-nav__link">
         R-CNN
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    概述
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#motivation" class="md-nav__link">
-    Motivation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    算法流程
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    训练
-  </a>
-  
-    <nav class="md-nav" aria-label="训练">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    有监督的预训练
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    精调
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    分类器
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -792,11 +703,59 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../yolov3/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          YOLOv3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         YOLOv3
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    概述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    模型结构
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -856,50 +815,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#motivation" class="md-nav__link">
-    Motivation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    算法流程
+    模型结构
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    训练
-  </a>
-  
-    <nav class="md-nav" aria-label="训练">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    有监督的预训练
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    精调
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    分类器
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -915,31 +833,20 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/lzy-tony/csnotes/edit/master/docs/papers/ai/object_detection/r-cnn.md" title="编辑此页" class="md-content__button md-icon">
+  <a href="https://github.com/lzy-tony/csnotes/edit/master/docs/papers/ai/object_detection/yolov3.md" title="编辑此页" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="r-cnn">R-CNN<a class="headerlink" href="#r-cnn" title="Permanent link">&para;</a></h1>
+<h1 id="yolo-v3">YOLO v3<a class="headerlink" href="#yolo-v3" title="Permanent link">&para;</a></h1>
 <h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>[CVPR2014][R-CNN] Rich feature hierarchies for accurate object detection and semantic segmentation</p>
-<h2 id="motivation">Motivation<a class="headerlink" href="#motivation" title="Permanent link">&para;</a></h2>
-<p>将目标检测任务看做是一个有层级的任务：先生成有物体的区域、再进行分类（二阶段）。</p>
-<h2 id="_2">算法流程<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<ol>
-<li>使用 Selective Search 在图片上生成约2000个可能的候选区域（region proposal）。</li>
-<li>利用 CNN 提取固定长度的特征。</li>
-<li>为了做到这一点，需要对所有区域扭曲到固定大小。</li>
-<li>利用线性 SVM 进行分类。</li>
-</ol>
-<h2 id="_3">训练<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<h3 id="_4">有监督的预训练<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>预训练特征提取 CNN。</p>
-<h3 id="_5">精调<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>对于扭曲的图像进行精调。</p>
-<h3 id="_6">分类器<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p>设定 IoU 阈值 0.3 作为 SVM 正例和负例的界限（与训练 CNN 时不同）。</p>
+<p>[YOLOv3] YOLOv3: An Incremental Improvement</p>
+<p>对于 YOLOv2 的一些进一步的改动和提升。</p>
+<h2 id="_2">模型结构<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../img/yolov3.png" /></p>
+<p>YOLOv3 使用多尺度的预测，在特征提取时提取得到不同尺寸的特征图（如上图）。</p>
+<p>在每个特征图中，YOLOv3 分别通过大小为 <span class="arithmatex"><span class="MathJax_Preview">k \times (4 + 1 + c)</span><script type="math/tex">k \times (4 + 1 + c)</script></span> 个 <span class="arithmatex"><span class="MathJax_Preview">1 \times 1</span><script type="math/tex">1 \times 1</script></span> 个卷积核，得到输出大小为 <span class="arithmatex"><span class="MathJax_Preview">S \times S \times [k \times (4 + 1 + c)]</span><script type="math/tex">S \times S \times [k \times (4 + 1 + c)]</script></span> 的张量。其中 <span class="arithmatex"><span class="MathJax_Preview">c</span><script type="math/tex">c</script></span> 为类别数量；<span class="arithmatex"><span class="MathJax_Preview">k = 3</span><script type="math/tex">k = 3</script></span> 为 anchor box 的数量；<span class="arithmatex"><span class="MathJax_Preview">4</span><script type="math/tex">4</script></span> 为 <span class="arithmatex"><span class="MathJax_Preview">x, y, w, h</span><script type="math/tex">x, y, w, h</script></span>；<span class="arithmatex"><span class="MathJax_Preview">1</span><script type="math/tex">1</script></span> 为置信度。</p>
 
   <hr>
 <div class="md-source-file">
@@ -969,7 +876,7 @@
     <nav class="md-footer__inner md-grid" aria-label="页脚">
       
         
-        <a href="../../adversarial_attack/pgd/" class="md-footer__link md-footer__link--prev" aria-label="上一页: PGD" rel="prev">
+        <a href="../yolov2/" class="md-footer__link md-footer__link--prev" aria-label="上一页: YOLOv2" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -978,26 +885,11 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              PGD
+              YOLOv2
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../yolov1/" class="md-footer__link md-footer__link--next" aria-label="下一页: YOLOv1" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              YOLOv1
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
