@@ -8,19 +8,19 @@
       
       
       
-      <link rel="icon" href="../../../img/green_aleph.jpg">
+      <link rel="icon" href="../../../../img/green_aleph.jpg">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
     
     
       
-        <title>Shannon 理论 - csnotes</title>
+        <title>YOLOv2 - csnotes</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.120efc48.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.120efc48.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.9647289d.min.css">
         
       
     
@@ -35,7 +35,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#shannon" class="md-skip">
+        <a href="#yolo-v2" class="md-skip">
           跳转至
         </a>
       
@@ -77,7 +77,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="csnotes" class="md-header__button md-logo" aria-label="csnotes" data-md-component="logo">
+    <a href="../../../.." title="csnotes" class="md-header__button md-logo" aria-label="csnotes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Shannon 理论
+              YOLOv2
             
           </span>
         </div>
@@ -195,9 +195,12 @@
         
   
   
-    
-  
 
+
+  
+  
+  
+    
 
   
   
@@ -208,10 +211,44 @@
   
   
     <li class="md-tabs__item">
-      <a href="../intro/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../../cs/cryptography/cryptography/info/" class="md-tabs__link">
         计算机科学
       </a>
     </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../adversarial_attack/pgd/" class="md-tabs__link md-tabs__link--active">
+        论文
+      </a>
+    </li>
+  
+
   
 
   
@@ -238,7 +275,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="csnotes" class="md-nav__button md-logo" aria-label="csnotes" data-md-component="logo">
+    <a href="../../../.." title="csnotes" class="md-nav__button md-logo" aria-label="csnotes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -267,14 +304,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
       
       
       
@@ -295,14 +330,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_1" type="checkbox" id="__nav_1_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_1" type="checkbox" id="__nav_1_1" >
       
       
       
@@ -324,8 +357,48 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_1_1" type="checkbox" id="__nav_1_1_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_1_1">
+          现代密码学
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="现代密码学" data-md-level="3">
+        <label class="md-nav__title" for="__nav_1_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          现代密码学
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../intro/" class="md-nav__link">
+      <a href="../../../../cs/cryptography/cryptography/info/" class="md-nav__link">
+        说明
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cs/cryptography/cryptography/intro/" class="md-nav__link">
         绪论
       </a>
     </li>
@@ -339,7 +412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../math/" class="md-nav__link">
+      <a href="../../../../cs/cryptography/cryptography/math/" class="md-nav__link">
         数学前置
       </a>
     </li>
@@ -353,8 +426,259 @@
   
   
     <li class="md-nav__item">
-      <a href="../classic/" class="md-nav__link">
+      <a href="../../../../cs/cryptography/cryptography/classic/" class="md-nav__link">
         古典密码学
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cs/cryptography/cryptography/shannon/" class="md-nav__link">
+        Shannon 理论
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cs/cryptography/cryptography/block_cipher/" class="md-nav__link">
+        分组密码
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cs/cryptography/cryptography/hash/" class="md-nav__link">
+        Hash 函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cs/cryptography/cryptography/public_key/" class="md-nav__link">
+        公钥密码体系
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cs/cryptography/cryptography/signature/" class="md-nav__link">
+        数字签名
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          论文
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="论文" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          论文
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          AI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="AI" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          AI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_1" type="checkbox" id="__nav_2_1_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_1">
+          对抗攻防
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="对抗攻防" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          对抗攻防
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adversarial_attack/pgd/" class="md-nav__link">
+        PGD
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_2" type="checkbox" id="__nav_2_1_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_2">
+          目标识别
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="目标识别" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          目标识别
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../r-cnn/" class="md-nav__link">
+        R-CNN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../yolov1/" class="md-nav__link">
+        YOLOv1
       </a>
     </li>
   
@@ -377,12 +701,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Shannon 理论
+          YOLOv2
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Shannon 理论
+        YOLOv2
       </a>
       
         
@@ -402,28 +726,84 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    密码体制安全性
+    概述
   </a>
   
-    <nav class="md-nav" aria-label="密码体制安全性">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#better" class="md-nav__link">
+    Better
+  </a>
+  
+    <nav class="md-nav" aria-label="Better">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    完善保密性
+  <a href="#batch-normalization" class="md-nav__link">
+    Batch Normalization
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#otp" class="md-nav__link">
-    一次一密（OTP）
+  <a href="#high-resolution-classifier" class="md-nav__link">
+    High Resolution Classifier
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anchor-box" class="md-nav__link">
+    Anchor Box
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dimension-clusters" class="md-nav__link">
+    Dimension Clusters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direct-location-prediction" class="md-nav__link">
+    Direct Location Prediction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fine-grained-features" class="md-nav__link">
+    Fine-Grained Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-scale-training" class="md-nav__link">
+    Multi-Scale Training
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faster" class="md-nav__link">
+    Faster
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stronger" class="md-nav__link">
+    Stronger
+  </a>
   
 </li>
       
@@ -436,57 +816,8 @@
 
             
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../block_cipher/" class="md-nav__link">
-        分组密码
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../hash/" class="md-nav__link">
-        Hash 函数
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../public_key/" class="md-nav__link">
-        公钥密码体系
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../signature/" class="md-nav__link">
-        数字签名
-      </a>
+        </ul>
+      </nav>
     </li>
   
 
@@ -533,28 +864,84 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    密码体制安全性
+    概述
   </a>
   
-    <nav class="md-nav" aria-label="密码体制安全性">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#better" class="md-nav__link">
+    Better
+  </a>
+  
+    <nav class="md-nav" aria-label="Better">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    完善保密性
+  <a href="#batch-normalization" class="md-nav__link">
+    Batch Normalization
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#otp" class="md-nav__link">
-    一次一密（OTP）
+  <a href="#high-resolution-classifier" class="md-nav__link">
+    High Resolution Classifier
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anchor-box" class="md-nav__link">
+    Anchor Box
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dimension-clusters" class="md-nav__link">
+    Dimension Clusters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direct-location-prediction" class="md-nav__link">
+    Direct Location Prediction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fine-grained-features" class="md-nav__link">
+    Fine-Grained Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-scale-training" class="md-nav__link">
+    Multi-Scale Training
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faster" class="md-nav__link">
+    Faster
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stronger" class="md-nav__link">
+    Stronger
+  </a>
   
 </li>
       
@@ -570,114 +957,88 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/lzy-tony/csnotes/edit/master/docs/cs/cryptography/shannon.md" title="编辑此页" class="md-content__button md-icon">
+  <a href="https://github.com/lzy-tony/csnotes/edit/master/docs/papers/ai/object_detection/yolov2.md" title="编辑此页" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="shannon">Shannon理论<a class="headerlink" href="#shannon" title="Permanent link">&para;</a></h1>
-<h2 id="_1">密码体制安全性<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h1 id="yolo-v2">YOLO v2<a class="headerlink" href="#yolo-v2" title="Permanent link">&para;</a></h1>
+<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>[CVPR2017] YOLO9000: Better, Faster, Stronger</p>
+<h2 id="better">Better<a class="headerlink" href="#better" title="Permanent link">&para;</a></h2>
+<p>YOLO v1 精度上的缺点：</p>
 <ul>
-<li>无条件安全性：完善保密性。</li>
+<li>相比于 R-CNN 系列，YOLO 的 localization 错误率明显较高。</li>
+<li>YOLO 的 recall 较低（或许受限于一个 grid 只能识别一类物体）。</li>
 </ul>
-<p>即使攻击者有无限的计算资源也不可能攻破密码体制，则该密码体制是无条件安全的。</p>
-<ul>
-<li>计算安全性：破译一个密码体制所做的计算上的努力。</li>
-</ul>
-<p>如果使用最好的算法破译一个密码体制至少需要一个特定的非常大的数字，定义该密码体制是计算安全的。</p>
-<ul>
-<li>可证明安全性：通过归约的方式为安全性提供证据。</li>
-</ul>
-<p>如果可以破译密码体制 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>，则可以解决一个数学难题 <span class="arithmatex"><span class="MathJax_Preview">B</span><script type="math/tex">B</script></span>。</p>
-<h3 id="_2">完善保密性<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>密码体制的随机变量视角：</p>
-<p>假设 <span class="arithmatex"><span class="MathJax_Preview">(\mathcal P, \mathcal C, \mathcal K, \mathcal E, \mathcal D)</span><script type="math/tex">(\mathcal P, \mathcal C, \mathcal K, \mathcal E, \mathcal D)</script></span> 是一个特定的密码体制。<span class="arithmatex"><span class="MathJax_Preview">P(\boldsymbol x = x)</span><script type="math/tex">P(\boldsymbol x = x)</script></span> 表示明文 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> 发生的先验概率，<span class="arithmatex"><span class="MathJax_Preview">P(\boldsymbol K = K)</span><script type="math/tex">P(\boldsymbol K = K)</script></span> 表示密钥 <span class="arithmatex"><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span> 发生的概率。由 <span class="arithmatex"><span class="MathJax_Preview">\mathcal P</span><script type="math/tex">\mathcal P</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">\mathcal K</span><script type="math/tex">\mathcal K</script></span> 的概率分布可以导出 <span class="arithmatex"><span class="MathJax_Preview">\mathcal C</span><script type="math/tex">\mathcal C</script></span> 的概率分布，对于任意 <span class="arithmatex"><span class="MathJax_Preview">y \in \mathcal C</span><script type="math/tex">y \in \mathcal C</script></span>，有：</p>
+<p>针对上述缺点，YOLO v2 做出了一系列的改进。</p>
+<h3 id="batch-normalization">Batch Normalization<a class="headerlink" href="#batch-normalization" title="Permanent link">&para;</a></h3>
+<p>提供正则化，可以去除 dropout 而不过拟合。</p>
+<h3 id="high-resolution-classifier">High Resolution Classifier<a class="headerlink" href="#high-resolution-classifier" title="Permanent link">&para;</a></h3>
+<p>在更高分辨率的图片上训练主体的分类网络。</p>
+<h3 id="anchor-box">Anchor Box<a class="headerlink" href="#anchor-box" title="Permanent link">&para;</a></h3>
+<p>引入 anchor box，将预测对象从 YOLO v1 中全连接层直接输出坐标改变为利用 anchor box 预测偏置，简化预测问题。</p>
+<h3 id="dimension-clusters">Dimension Clusters<a class="headerlink" href="#dimension-clusters" title="Permanent link">&para;</a></h3>
+<p>对于 anchor box，我们希望选取更好的先验以降低学习的难度。这一过程可以通过对于数据集进行 K-means 聚类完成。</p>
+<p>注意到如果使用标准的欧氏距离，大框会比小框有更大的距离，考虑到我们追求的目标是更小的 <span class="arithmatex"><span class="MathJax_Preview">\text{IOU}</span><script type="math/tex">\text{IOU}</script></span>，自定义距离为
+$$
+d(\text{box}, \text{centroid}) = 1 - \text{IOU}(\text{box}, \text{centroid})
+$$</p>
+<h3 id="direct-location-prediction">Direct Location Prediction<a class="headerlink" href="#direct-location-prediction" title="Permanent link">&para;</a></h3>
+<p>在引入 anchor box 的过程中产生了新的问题：由于 R-CNN 系列模型中对于 anchor box 通过偏置推算且没有对应约束，因此 anchor box 可以出现在图片的任意位置。</p>
 <div class="arithmatex">
 <div class="MathJax_Preview">
-P(\boldsymbol y = y) = \sum \limits_{\boldsymbol K: y \in \mathcal C(K)} P(\boldsymbol K = K)P(\boldsymbol x = d_K(y))
+\begin{cases}
+x = (t_x \times w_a) - x_a \\
+y = (t_y \times h_a) - y_a
+\end{cases}
 </div>
 <script type="math/tex; mode=display">
-P(\boldsymbol y = y) = \sum \limits_{\boldsymbol K: y \in \mathcal C(K)} P(\boldsymbol K = K)P(\boldsymbol x = d_K(y))
+\begin{cases}
+x = (t_x \times w_a) - x_a \\
+y = (t_y \times h_a) - y_a
+\end{cases}
 </script>
 </div>
-<p>同样，可以利用 Bayes 公式计算出给定密文明文的分布。</p>
+<p>对于随机初始化的模型这会导致很高的不稳定性（尤其在初始阶段）且需要很久才能收敛。</p>
+<p>解决方案是，对于每个 anchor box 都预测 <span class="arithmatex"><span class="MathJax_Preview">5</span><script type="math/tex">5</script></span> 个值：<span class="arithmatex"><span class="MathJax_Preview">t_x, t_y, t_w, t_h, t_o</span><script type="math/tex">t_x, t_y, t_w, t_h, t_o</script></span>，如果 grid 的偏置是 <span class="arithmatex"><span class="MathJax_Preview">(c_x, c_y)</span><script type="math/tex">(c_x, c_y)</script></span>、anchor box 有长宽 <span class="arithmatex"><span class="MathJax_Preview">p_w, p_h</span><script type="math/tex">p_w, p_h</script></span>，则有预测：</p>
 <div class="arithmatex">
 <div class="MathJax_Preview">
-P(\boldsymbol x = x| \boldsymbol y = y) = \frac{P(\boldsymbol x = x) \times \sum \limits_{K: x = d_K(y)} P(\boldsymbol K = K)}{\sum \limits_{\boldsymbol K: y \in \mathcal C(K)} P(\boldsymbol K = K)P(\boldsymbol x = d_K(y))}
+\begin{cases}
+b_x = \sigma(t_x) + c_x \\
+b_y = \sigma(t_y) + c_y \\
+b_w = p_w e^{t_w} \\
+b_h = p_h e^{t_h}
+\end{cases}
 </div>
 <script type="math/tex; mode=display">
-P(\boldsymbol x = x| \boldsymbol y = y) = \frac{P(\boldsymbol x = x) \times \sum \limits_{K: x = d_K(y)} P(\boldsymbol K = K)}{\sum \limits_{\boldsymbol K: y \in \mathcal C(K)} P(\boldsymbol K = K)P(\boldsymbol x = d_K(y))}
+\begin{cases}
+b_x = \sigma(t_x) + c_x \\
+b_y = \sigma(t_y) + c_y \\
+b_w = p_w e^{t_w} \\
+b_h = p_h e^{t_h}
+\end{cases}
 </script>
 </div>
-<p>定义：一个密码体制具有完善保密性，即，如果对于任意的 <span class="arithmatex"><span class="MathJax_Preview">x \in \mathcal P</span><script type="math/tex">x \in \mathcal P</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">y \in \mathcal C</span><script type="math/tex">y \in \mathcal C</script></span>，有 <span class="arithmatex"><span class="MathJax_Preview">P(x | y) = P(x)</span><script type="math/tex">P(x | y) = P(x)</script></span>。</p>
-<p>定理：假设移位密码的26个密钥是等概率使用的，则对于任意的明文概率分布，移位密码具有完善保密性。</p>
-<blockquote>
-<p>注：需要单个密钥加密单个明文，否则使用不是等概率。</p>
-</blockquote>
-<p>定理：假设密码体制 <span class="arithmatex"><span class="MathJax_Preview">(\mathcal P, \mathcal C, \mathcal K, \mathcal E, \mathcal D)</span><script type="math/tex">(\mathcal P, \mathcal C, \mathcal K, \mathcal E, \mathcal D)</script></span> 满足 <span class="arithmatex"><span class="MathJax_Preview">|\mathcal K| = | \mathcal C| = |\mathcal P|</span><script type="math/tex">|\mathcal K| = | \mathcal C| = |\mathcal P|</script></span>，这个密码体制是完善保密的，当且仅当每个密码被使用的概率是 <span class="arithmatex"><span class="MathJax_Preview">\frac 1{|\mathcal K|}</span><script type="math/tex">\frac 1{|\mathcal K|}</script></span>，并且对于任意的 <span class="arithmatex"><span class="MathJax_Preview">x \in \mathcal P</span><script type="math/tex">x \in \mathcal P</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">y \in \mathcal C</span><script type="math/tex">y \in \mathcal C</script></span>，存在唯一的密钥 <span class="arithmatex"><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span> 使得 <span class="arithmatex"><span class="MathJax_Preview">e_K(x) = y</span><script type="math/tex">e_K(x) = y</script></span>。</p>
-<h3 id="otp">一次一密（OTP）<a class="headerlink" href="#otp" title="Permanent link">&para;</a></h3>
-<p>密码体制：假设 <span class="arithmatex"><span class="MathJax_Preview">n \ge 1</span><script type="math/tex">n \ge 1</script></span> 是正整数，<span class="arithmatex"><span class="MathJax_Preview">\mathcal P = \mathcal C = \mathcal K = (\mathbb Z_2)^n</span><script type="math/tex">\mathcal P = \mathcal C = \mathcal K = (\mathbb Z_2)^n</script></span>。对于 <span class="arithmatex"><span class="MathJax_Preview">K \in (\mathbb Z_2)^n</span><script type="math/tex">K \in (\mathbb Z_2)^n</script></span>，定义 <span class="arithmatex"><span class="MathJax_Preview">e_K(x)</span><script type="math/tex">e_K(x)</script></span> 为 <span class="arithmatex"><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> 的异或。因此，如果 <span class="arithmatex"><span class="MathJax_Preview">x = (x_1, \dots, x_n)</span><script type="math/tex">x = (x_1, \dots, x_n)</script></span> 并且 <span class="arithmatex"><span class="MathJax_Preview">K = (K_1, \dots, K_n)</span><script type="math/tex">K = (K_1, \dots, K_n)</script></span>，则：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-e_K(x) = (x_1 + K_1, \dots, x_n + K_n) \mod 2 \\
-</div>
-<script type="math/tex; mode=display">
-e_K(x) = (x_1 + K_1, \dots, x_n + K_n) \mod 2 \\
-</script>
-</div>
-<p>解密和加密过程相同，如果 <span class="arithmatex"><span class="MathJax_Preview">y = (y_1, \dots, y_n)</span><script type="math/tex">y = (y_1, \dots, y_n)</script></span>，则</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-d_K(y) = (y_1 + K_1, \dots, y_n + K_n) \mod 2
-</div>
-<script type="math/tex; mode=display">
-d_K(y) = (y_1 + K_1, \dots, y_n + K_n) \mod 2
-</script>
-</div>
-<p>定理：OTP具备完善保密性。</p>
-<blockquote>
-<p>证明：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\begin{align} 
-P(\boldsymbol C = c |\boldsymbol P = p) &amp;= P(\boldsymbol K = p \oplus c) = \frac 1 {2^n} \\
-P(\boldsymbol C = c) &amp;= \sum \limits_{p \in P} P(\boldsymbol P = p)P(\boldsymbol C = c | \boldsymbol P = p) \\
-&amp;= \frac 1 {2^n} \sum \limits_{p \in P} P(\boldsymbol P = p) = \frac 1 {2^n}
-\end{align}
-</div>
-<script type="math/tex; mode=display">
-\begin{align} 
-P(\boldsymbol C = c |\boldsymbol P = p) &= P(\boldsymbol K = p \oplus c) = \frac 1 {2^n} \\
-P(\boldsymbol C = c) &= \sum \limits_{p \in P} P(\boldsymbol P = p)P(\boldsymbol C = c | \boldsymbol P = p) \\
-&= \frac 1 {2^n} \sum \limits_{p \in P} P(\boldsymbol P = p) = \frac 1 {2^n}
-\end{align}
-</script>
-</div>
-<p>因此有</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-P(\boldsymbol P = p | \boldsymbol C = c) = \frac{P(\boldsymbol C = c | \boldsymbol P = p) P(\boldsymbol P = p)}{P(\boldsymbol C = c)} = P(\boldsymbol P = p)
-</div>
-<script type="math/tex; mode=display">
-P(\boldsymbol P = p | \boldsymbol C = c) = \frac{P(\boldsymbol C = c | \boldsymbol P = p) P(\boldsymbol P = p)}{P(\boldsymbol C = c)} = P(\boldsymbol P = p)
-</script>
-</div>
-</blockquote>
-<p><strong>无法被破译</strong> 的（可利用信息熵证明），一个 <strong>无法被破译的密码系统必须具备与一次一密相同的条件</strong> ，即密钥必须有以下特征：</p>
-<ul>
-<li>完全随机；</li>
-<li>不能重复使用；</li>
-<li>保密；</li>
-<li>和明文一样长。</li>
-</ul>
+<p>而置信度通过 <span class="arithmatex"><span class="MathJax_Preview">\sigma(t_o)</span><script type="math/tex">\sigma(t_o)</script></span> 计算。</p>
+<h3 id="fine-grained-features">Fine-Grained Features<a class="headerlink" href="#fine-grained-features" title="Permanent link">&para;</a></h3>
+<p>YOLO v2 的输入图片大小为 <span class="arithmatex"><span class="MathJax_Preview">416 \times 416</span><script type="math/tex">416 \times 416</script></span>，经过多次最大池化后得到 <span class="arithmatex"><span class="MathJax_Preview">13 \times 13</span><script type="math/tex">13 \times 13</script></span> 的特征图。这一大小的特征图对于检测大物体足够，但对于小物体还需要更加精细的特征。</p>
+<p>YOLO v2 的解决方案是增加 pass-through 层，对于之前的 <span class="arithmatex"><span class="MathJax_Preview">26 \times 26</span><script type="math/tex">26 \times 26</script></span> 的特征图，通过拼接的方式增加到输出的通道中。</p>
+<h3 id="multi-scale-training">Multi-Scale Training<a class="headerlink" href="#multi-scale-training" title="Permanent link">&para;</a></h3>
+<p>多尺度图片，在训练过程中定时改变输入图片尺寸使得模型更鲁棒。</p>
+<h2 id="faster">Faster<a class="headerlink" href="#faster" title="Permanent link">&para;</a></h2>
+<p>取代原先的 VGG16，改用 Darknet19、通过更多的降维、平均池化达到更快的速度。</p>
+<h2 id="stronger">Stronger<a class="headerlink" href="#stronger" title="Permanent link">&para;</a></h2>
+<p>对于分类任务，标签通常较为详细；而对于检测任务，标签通常较为粗略。YOLO v2 希望能够通过统一的方法对这两者进行训练，以提高数据利用并联合训练。</p>
+<p>使用 WordTree 对于标签通过语意进行分层，可以将详细和粗略的标签互化，得到 YOLO9000。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2022年6月28日</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2022年6月30日</span>
       
     
   </small>
@@ -700,7 +1061,7 @@ P(\boldsymbol P = p | \boldsymbol C = c) = \frac{P(\boldsymbol C = c | \boldsymb
     <nav class="md-footer__inner md-grid" aria-label="页脚">
       
         
-        <a href="../classic/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 古典密码学" rel="prev">
+        <a href="../yolov1/" class="md-footer__link md-footer__link--prev" aria-label="上一页: YOLOv1" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -709,26 +1070,11 @@ P(\boldsymbol P = p | \boldsymbol C = c) = \frac{P(\boldsymbol C = c | \boldsymb
               <span class="md-footer__direction">
                 上一页
               </span>
-              古典密码学
+              YOLOv1
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../block_cipher/" class="md-footer__link md-footer__link--next" aria-label="下一页: 分组密码" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              分组密码
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
@@ -752,10 +1098,10 @@ P(\boldsymbol P = p | \boldsymbol C = c) = \frac{P(\boldsymbol C = c | \boldsymb
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "navigation.tabs", "navigation.instant"], "search": "../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.top", "navigation.tabs", "navigation.instant"], "search": "../../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
