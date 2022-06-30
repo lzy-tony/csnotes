@@ -30,14 +30,24 @@ extra:
 nav:
   - 计算机科学:
     - 密码学:
-      - 绪论: cs/cryptography/intro.md
-      - 数学前置: cs/cryptography/math.md
-      - 古典密码学: cs/cryptography/classic.md
-      - Shannon 理论: cs/cryptography/shannon.md
-      - 分组密码: cs/cryptography/block_cipher.md
-      - Hash 函数: cs/cryptography/hash.md
-      - 公钥密码体系: cs/cryptography/public_key.md
-      - 数字签名: cs/cryptography/signature.md
+      - 现代密码学:
+        - 说明: cs/cryptography/cryptography/info.md
+        - 绪论: cs/cryptography/cryptography/intro.md
+        - 数学前置: cs/cryptography/cryptography/math.md
+        - 古典密码学: cs/cryptography/cryptography/classic.md
+        - Shannon 理论: cs/cryptography/cryptography/shannon.md
+        - 分组密码: cs/cryptography/cryptography/block_cipher.md
+        - Hash 函数: cs/cryptography/cryptography/hash.md
+        - 公钥密码体系: cs/cryptography/cryptography/public_key.md
+        - 数字签名: cs/cryptography/cryptography/signature.md
+  - 论文:
+    - AI:
+      - 对抗攻防:
+        - PGD: papers/ai/adversarial_attack/pgd.md
+      - 目标识别:
+        - R-CNN: papers/ai/object_detection/r-cnn.md
+        - YOLOv1: papers/ai/object_detection/yolov1.md
+        - YOLOv2: papers/ai/object_detection/yolov2.md
 
 extra_javascript:
   - 'https://cdn.jsdelivr.net/npm/mathjax@2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
