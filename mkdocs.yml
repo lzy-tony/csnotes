@@ -48,6 +48,7 @@ nav:
         - R-CNN: papers/ai/object_detection/r-cnn.md
         - YOLOv1: papers/ai/object_detection/yolov1.md
         - YOLOv2: papers/ai/object_detection/yolov2.md
+        - YOLOv3: papers/ai/object_detection/yolov3.md
 
 extra_javascript:
   - 'https://cdn.jsdelivr.net/npm/mathjax@2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
