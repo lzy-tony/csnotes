@@ -44,6 +44,7 @@ nav:
     - AI:
       - 对抗攻防:
         - PGD: papers/ai/adversarial_attack/pgd.md
+        - PS-GAN: papers/ai/adversarial_attack/ps-gan.md
       - 目标识别:
         - R-CNN: papers/ai/object_detection/r-cnn.md
         - YOLOv1: papers/ai/object_detection/yolov1.md
