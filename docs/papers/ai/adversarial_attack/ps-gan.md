@@ -65,7 +65,7 @@ $$
 \begin{align}
 L_{\text{GAN}}(G, D) = 
 &\mathbb E_{\boldsymbol x}[\log D(\boldsymbol \delta, \boldsymbol x)] + \\
-& E_{\boldsymbol x, \boldsymbol z}[\log (1 - D(\boldsymbol \delta, \boldsymbol x+_{M(\boldsymbol x)} G(\boldsymbol z, \boldsymbol \delta)))]
+& \mathbb E_{\boldsymbol x, \boldsymbol z}[\log (1 - D(\boldsymbol \delta, \boldsymbol x+_{M(\boldsymbol x)} G(\boldsymbol z, \boldsymbol \delta)))]
 \end{align}
 $$
 
