@@ -13,7 +13,7 @@
     
     
       
-        <title>PGD - csnotes</title>
+        <title>GAN - csnotes</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pgd" class="md-skip">
+        <a href="#gan" class="md-skip">
           跳转至
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              PGD
+              GAN
             
           </span>
         </div>
@@ -243,7 +243,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../gan/gan/" class="md-tabs__link md-tabs__link--active">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
         论文
       </a>
     </li>
@@ -586,12 +586,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_1" type="checkbox" id="__nav_2_1_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_1" type="checkbox" id="__nav_2_1_1" checked>
       
       
       
@@ -612,55 +614,6 @@
               
   
   
-  
-    <li class="md-nav__item">
-      <a href="../../gan/gan/" class="md-nav__link">
-        GAN
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_2" type="checkbox" id="__nav_2_1_2" checked>
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2_1_2">
-          对抗攻防
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="对抗攻防" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_1_2">
-          <span class="md-nav__icon md-icon"></span>
-          对抗攻防
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
     
   
   
@@ -673,12 +626,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          PGD
+          GAN
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        PGD
+        GAN
       </a>
       
         
@@ -704,30 +657,30 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    优化视角的攻防统一模型
+  <a href="#motivation" class="md-nav__link">
+    Motivation
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    一阶攻击
+  <a href="#_2" class="md-nav__link">
+    模型结构
   </a>
   
-    <nav class="md-nav" aria-label="一阶攻击">
+    <nav class="md-nav" aria-label="模型结构">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#pgd_1" class="md-nav__link">
-    PGD
+  <a href="#_3" class="md-nav__link">
+    模型描述
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    一阶攻击
+    工程细节
   </a>
   
 </li>
@@ -739,15 +692,35 @@
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    对抗训练
+    理论说明
+  </a>
+  
+    <nav class="md-nav" aria-label="理论说明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    近似过程
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    模型容量和对抗训练的部分讨论
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    全局最优性
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    算法收敛性
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -760,13 +733,60 @@
 
             
           
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_2" type="checkbox" id="__nav_2_1_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_2">
+          对抗攻防
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="对抗攻防" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          对抗攻防
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
             
               
   
   
   
     <li class="md-nav__item">
-      <a href="../ps-gan/" class="md-nav__link">
+      <a href="../../adversarial_attack/pgd/" class="md-nav__link">
+        PGD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adversarial_attack/ps-gan/" class="md-nav__link">
         PS-GAN
       </a>
     </li>
@@ -917,30 +937,30 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    优化视角的攻防统一模型
+  <a href="#motivation" class="md-nav__link">
+    Motivation
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    一阶攻击
+  <a href="#_2" class="md-nav__link">
+    模型结构
   </a>
   
-    <nav class="md-nav" aria-label="一阶攻击">
+    <nav class="md-nav" aria-label="模型结构">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#pgd_1" class="md-nav__link">
-    PGD
+  <a href="#_3" class="md-nav__link">
+    模型描述
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    一阶攻击
+    工程细节
   </a>
   
 </li>
@@ -952,15 +972,35 @@
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    对抗训练
+    理论说明
+  </a>
+  
+    <nav class="md-nav" aria-label="理论说明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    近似过程
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    模型容量和对抗训练的部分讨论
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    全局最优性
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    算法收敛性
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -976,68 +1016,136 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/lzy-tony/csnotes/edit/master/docs/papers/ai/adversarial_attack/pgd.md" title="编辑此页" class="md-content__button md-icon">
+  <a href="https://github.com/lzy-tony/csnotes/edit/master/docs/papers/ai/gan/gan.md" title="编辑此页" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="pgd">PGD<a class="headerlink" href="#pgd" title="Permanent link">&para;</a></h1>
+<h1 id="gan">GAN<a class="headerlink" href="#gan" title="Permanent link">&para;</a></h1>
 <h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>[ICLR2018][PGD] Towards Deep Learning Models Resistant to Adversarial Attacks</p>
-<p>对于对抗攻防进行一个总结，并且用一个统一的模型去描述针对深度神经网络的攻击和防御。</p>
-<ul>
-<li>提出了统一描述对抗攻防的鞍点优化模型。</li>
-<li>总结了利用梯度进行攻击的最强一阶攻击手段 PGD（Projected Gradient Descent）。</li>
-<li>在一阶对抗样本的基础上提出对抗训练的方法，讨论使模型更鲁棒的方法。</li>
-</ul>
-<h2 id="_2">优化视角的攻防统一模型<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>机器学习模型的出发点是去寻找合适的参数 <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol \theta</span><script type="math/tex">\boldsymbol \theta</script></span> 以最小化风险：</p>
+<p>[NIPS2014][GAN] Generative Adversarial Nets</p>
+<h2 id="motivation">Motivation<a class="headerlink" href="#motivation" title="Permanent link">&para;</a></h2>
+<p>对于深度学习模型的研究主要集中在判别模型领域中，对于生成模型的研究不足。</p>
+<p>现有的对于数据分布的估计方法涉及到复杂的统计学手段，应用不便。</p>
+<h2 id="_2">模型结构<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">模型描述<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>同时训练一个生成模型 <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> 和一个判别模型 <span class="arithmatex"><span class="MathJax_Preview">D</span><script type="math/tex">D</script></span>，使得生成模型生成的数据分布 <span class="arithmatex"><span class="MathJax_Preview">p_g</span><script type="math/tex">p_g</script></span> 能够真实地估计数据分布。
+定义一个先验的输入噪声分布 <span class="arithmatex"><span class="MathJax_Preview">p_{\boldsymbol{z}}(\boldsymbol{z})</span><script type="math/tex">p_{\boldsymbol{z}}(\boldsymbol{z})</script></span>，此时生成模型为映射 <span class="arithmatex"><span class="MathJax_Preview">G(\boldsymbol{z}, \theta_g)</span><script type="math/tex">G(\boldsymbol{z}, \theta_g)</script></span>。
+定义判别模型 <span class="arithmatex"><span class="MathJax_Preview">D(\boldsymbol{x}, \theta_d)</span><script type="math/tex">D(\boldsymbol{x}, \theta_d)</script></span> 接受输入 <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol{x}</span><script type="math/tex">\boldsymbol{x}</script></span> 并输出一个单个标量代表真实性的置信度。</p>
+<p>此时，训练过程等价于一个 minimax 游戏：</p>
 <div class="arithmatex">
-<div class="MathJax_Preview">\mathbb E_{(\boldsymbol x, y) \sim D}[L(\boldsymbol \theta, \boldsymbol x, y)]</div>
-<script type="math/tex; mode=display">\mathbb E_{(\boldsymbol x, y) \sim D}[L(\boldsymbol \theta, \boldsymbol x, y)]</script>
+<div class="MathJax_Preview">
+\min \limits_G \max \limits_D V(G, D) =
+\mathbb{E}_{\boldsymbol x \sim p_{\text{data}}(\boldsymbol{x})}[\log D(\boldsymbol{x})] +
+\mathbb{E}_{\boldsymbol{z} \sim p_{\boldsymbol{z}}(\boldsymbol{z})}[\log (1 - D(G(\boldsymbol{z})))]
 </div>
-<p>由于数据的真实分布不可知，因此传统做法是使用经验分布去最小化经验风险（ERM），在这种范式下出现了对抗样本的问题。因此作者对于 ERM 的范式进行补充，吸纳了对抗样本。</p>
-<p>对抗攻防问题可以归纳为一个鞍点优化问题：</p>
+<script type="math/tex; mode=display">
+\min \limits_G \max \limits_D V(G, D) =
+\mathbb{E}_{\boldsymbol x \sim p_{\text{data}}(\boldsymbol{x})}[\log D(\boldsymbol{x})] +
+\mathbb{E}_{\boldsymbol{z} \sim p_{\boldsymbol{z}}(\boldsymbol{z})}[\log (1 - D(G(\boldsymbol{z})))]
+</script>
+</div>
+<h3 id="_4">工程细节<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>在实践过程中，我们需要采用一个数值计算的方法对目标进行优化。</p>
+<p>对于内层的优化目标，直接求出完备的优化结果在计算上是不可行的，因此我们通过交替 <span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> 步优化 <span class="arithmatex"><span class="MathJax_Preview">D</span><script type="math/tex">D</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">1</span><script type="math/tex">1</script></span> 步优化 <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> 来进行求解。超参数 <span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> 需要取适中的值，如果过小则对于 <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> 的判别不够准确，如果过强容易过拟合。</p>
+<p>对于外层的优化目标，里层的函数在实际应用中可能无法提供足够显著的梯度。尤其在早期时当 <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> 的效果较差时，<span class="arithmatex"><span class="MathJax_Preview">D</span><script type="math/tex">D</script></span> 能够以较高的置信度拒绝生成的结果，导致 <span class="arithmatex"><span class="MathJax_Preview">\log(1 - D(G(\boldsymbol{z})))</span><script type="math/tex">\log(1 - D(G(\boldsymbol{z})))</script></span> 饱和。因此，我们在训练 <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> 的时候寻求最大化 <span class="arithmatex"><span class="MathJax_Preview">\log D(G(\boldsymbol{z}))</span><script type="math/tex">\log D(G(\boldsymbol{z}))</script></span>。</p>
+<p>训练过程的算法流程如下：</p>
+<p><img alt="" src="../img/gan_training.PNG" /></p>
+<h2 id="_5">理论说明<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="_6">近似过程<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../img/gan_estimation.PNG" /></p>
+<h3 id="_7">全局最优性<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>Prop 1：对于固定的 <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span>，最优的判别模型 <span class="arithmatex"><span class="MathJax_Preview">D</span><script type="math/tex">D</script></span> 为：</p>
 <div class="arithmatex">
-<div class="MathJax_Preview"> \min \limits_{\boldsymbol \theta} \rho(\boldsymbol \theta), \rho(\boldsymbol \theta) = \mathbb{E}_{(\boldsymbol x, y) \sim D} [\max \limits_{\boldsymbol \delta \in \mathcal S} L(\boldsymbol \theta, \boldsymbol x + \boldsymbol \delta, y)] </div>
-<script type="math/tex; mode=display"> \min \limits_{\boldsymbol \theta} \rho(\boldsymbol \theta), \rho(\boldsymbol \theta) = \mathbb{E}_{(\boldsymbol x, y) \sim D} [\max \limits_{\boldsymbol \delta \in \mathcal S} L(\boldsymbol \theta, \boldsymbol x + \boldsymbol \delta, y)] </script>
+<div class="MathJax_Preview">
+D_G^*(\boldsymbol{x}) = \frac{p_{\text{data}}(\boldsymbol{x})}{p_{\text{data}}(\boldsymbol{x}) + p_g(\boldsymbol{x})}
 </div>
-<p>其中 <span class="arithmatex"><span class="MathJax_Preview">\mathcal S</span><script type="math/tex">\mathcal S</script></span> 为所有可能扰动的集合。</p>
-<p>在这一范式下：</p>
-<ul>
-<li>攻击方试图求解内层的最大化问题。</li>
-<li>防御方试图求解外层的最小化问题。</li>
-</ul>
-<h2 id="_3">一阶攻击<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<h3 id="pgd_1">PGD<a class="headerlink" href="#pgd_1" title="Permanent link">&para;</a></h3>
-<p>在 FGSM 的基础上进行了优化得到 PGD，从只移动单步到移动多步。</p>
+<script type="math/tex; mode=display">
+D_G^*(\boldsymbol{x}) = \frac{p_{\text{data}}(\boldsymbol{x})}{p_{\text{data}}(\boldsymbol{x}) + p_g(\boldsymbol{x})}
+</script>
+</div>
+<blockquote>
+<p>Proof：</p>
+<p>对于给定的生成模型 <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span>，判别模型 <span class="arithmatex"><span class="MathJax_Preview">D</span><script type="math/tex">D</script></span> 的训练过程是期望最大化 <span class="arithmatex"><span class="MathJax_Preview">V(G, D)</span><script type="math/tex">V(G, D)</script></span>：</p>
 <div class="arithmatex">
-<div class="MathJax_Preview">\boldsymbol x^{t + 1} = \prod_{\boldsymbol x + \mathcal S} (\boldsymbol x^t + \alpha \text{sign}(\nabla_{\boldsymbol x} L(\boldsymbol \theta, \boldsymbol x, y)))</div>
-<script type="math/tex; mode=display">\boldsymbol x^{t + 1} = \prod_{\boldsymbol x + \mathcal S} (\boldsymbol x^t + \alpha \text{sign}(\nabla_{\boldsymbol x} L(\boldsymbol \theta, \boldsymbol x, y)))</script>
+<div class="MathJax_Preview">
+\begin{align}
+V(G, D) &amp;= \int_{\boldsymbol x} p_{\text{data}}(\boldsymbol{x}) \log(D(\boldsymbol x)) \text dx + \int_{\boldsymbol z} p_{\boldsymbol z}(\boldsymbol z) \log(1 - D(g(\boldsymbol z))) \text dz \\
+&amp;= \int_{\boldsymbol x} p_{\text{data}}(\boldsymbol{x}) \log(D(\boldsymbol x))  + p_g(\boldsymbol x) \log(1 - D(\boldsymbol x)) \text dx
+\end{align}
 </div>
-<p>即，在负损失函数的梯度上执行多步投影的梯度下降。</p>
-<h3 id="_4">一阶攻击<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>鞍点问题内层的最大化问题是非凹的，因此很难通过优化手段直接求解。作者实验证明：尽管在区域 <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol x_i + \mathcal S</span><script type="math/tex">\boldsymbol x_i + \mathcal S</script></span> 中有许多分散的不同局部最大值，他们的值是相近的（实验方法：通过随机选取起始点进行 PGD），而更大的局部最大值通常是很难通过一阶手段寻找的（即使通过大量的起始点）。</p>
-<p>由这一性质，作者推论得到 PGD 可以用来解决内层的最大化问题，且 PGD 是最强的一阶攻击手段（只利用梯度信息）。</p>
-<h2 id="_5">对抗训练<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>对于防御方，我们需要解决外层的最小化问题，进行对抗训练。对抗训练的主要优化方式是使用 SGD。使用 SGD 的关键问题在于如何计算梯度 <span class="arithmatex"><span class="MathJax_Preview">\nabla_{\boldsymbol \theta} \rho(\boldsymbol \theta)</span><script type="math/tex">\nabla_{\boldsymbol \theta} \rho(\boldsymbol \theta)</script></span>。</p>
-<p>作者提出直接对 <span class="arithmatex"><span class="MathJax_Preview">\max</span><script type="math/tex">\max</script></span> 内部的表达式求梯度，即直接将原输入叠加上 PGD 生成的对抗扰动。这一操作的理论依据为 Danskin 定理，尽管不能满足其应用条件（需要连续可微的内部函数），但在实验中获得较好成果。</p>
-<h2 id="_6">模型容量和对抗训练的部分讨论<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<ul>
-<li>只提高模型大小本身（在自然样本上训练）即可有效提高针对一阶攻击的鲁棒性。</li>
-<li>应用FGSM样本进行训练只会导致模型过拟合到出现的样本上，无法有效提高鲁棒性。</li>
-<li>小的模型有可能难以学习到非平凡的分类器（容量不足，收敛到平凡解）。</li>
-<li>提高模型大小可以有效减小鞍点优化问题的值。</li>
-<li>更大的模型和更强的对抗样本会降低迁移性。</li>
-</ul>
+<script type="math/tex; mode=display">
+\begin{align}
+V(G, D) &= \int_{\boldsymbol x} p_{\text{data}}(\boldsymbol{x}) \log(D(\boldsymbol x)) \text dx + \int_{\boldsymbol z} p_{\boldsymbol z}(\boldsymbol z) \log(1 - D(g(\boldsymbol z))) \text dz \\
+&= \int_{\boldsymbol x} p_{\text{data}}(\boldsymbol{x}) \log(D(\boldsymbol x))  + p_g(\boldsymbol x) \log(1 - D(\boldsymbol x)) \text dx
+\end{align}
+</script>
+</div>
+<p>由于对于任意 <span class="arithmatex"><span class="MathJax_Preview">(a, b) \in \mathbb{R}^2 \backslash \{0, 0\}</span><script type="math/tex">(a, b) \in \mathbb{R}^2 \backslash \{0, 0\}</script></span>，函数 <span class="arithmatex"><span class="MathJax_Preview">y \rightarrow a \log (y) + b \log(1 - y)</span><script type="math/tex">y \rightarrow a \log (y) + b \log(1 - y)</script></span> 在 <span class="arithmatex"><span class="MathJax_Preview">[0, 1]</span><script type="math/tex">[0, 1]</script></span> 见 <span class="arithmatex"><span class="MathJax_Preview">\frac {a}{a + b}</span><script type="math/tex">\frac {a}{a + b}</script></span> 处取得最大值，因此得证。</p>
+</blockquote>
+<p>将上述结果代入 <span class="arithmatex"><span class="MathJax_Preview">V(G, D)</span><script type="math/tex">V(G, D)</script></span> 中，得到外层生成模型的优化目标 <span class="arithmatex"><span class="MathJax_Preview">C(G)</span><script type="math/tex">C(G)</script></span>：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\begin{align}
+C(G) &amp;= \max \limits_D V(G, D) \\
+&amp;= \mathbb{E}_{\boldsymbol x \sim p_{\text{data}}}[\log D_G^*(\boldsymbol{x})] + 
+\mathbb{E}_{\boldsymbol{z} \sim p_{\boldsymbol{z}}}[\log(1 - D_G^*(G(\boldsymbol{z})))] \\
+&amp;= \mathbb{E}_{\boldsymbol x \sim p_{\text{data}}}[\log D_G^*(\boldsymbol{x})] + 
+\mathbb{E}_{\boldsymbol{z} \sim p_{g}}[\log(1 - D_G^*(\boldsymbol{x}))] \\
+&amp;= \mathbb{E}_{\boldsymbol x \sim p_{\text{data}}}[\log \frac{p_{\text{data}}(\boldsymbol{x})}{p_{\text{data}}(\boldsymbol{x}) + p_g(\boldsymbol{x})}] + 
+\mathbb{E}_{\boldsymbol{z} \sim p_{g}}[\log \frac{p_g(\boldsymbol{x})}{p_{\text{data}}(\boldsymbol{x}) + p_g(\boldsymbol{x})}]
+\end{align}
+</div>
+<script type="math/tex; mode=display">
+\begin{align}
+C(G) &= \max \limits_D V(G, D) \\
+&= \mathbb{E}_{\boldsymbol x \sim p_{\text{data}}}[\log D_G^*(\boldsymbol{x})] + 
+\mathbb{E}_{\boldsymbol{z} \sim p_{\boldsymbol{z}}}[\log(1 - D_G^*(G(\boldsymbol{z})))] \\
+&= \mathbb{E}_{\boldsymbol x \sim p_{\text{data}}}[\log D_G^*(\boldsymbol{x})] + 
+\mathbb{E}_{\boldsymbol{z} \sim p_{g}}[\log(1 - D_G^*(\boldsymbol{x}))] \\
+&= \mathbb{E}_{\boldsymbol x \sim p_{\text{data}}}[\log \frac{p_{\text{data}}(\boldsymbol{x})}{p_{\text{data}}(\boldsymbol{x}) + p_g(\boldsymbol{x})}] + 
+\mathbb{E}_{\boldsymbol{z} \sim p_{g}}[\log \frac{p_g(\boldsymbol{x})}{p_{\text{data}}(\boldsymbol{x}) + p_g(\boldsymbol{x})}]
+\end{align}
+</script>
+</div>
+<p>Thm 1：<span class="arithmatex"><span class="MathJax_Preview">C(G)</span><script type="math/tex">C(G)</script></span> 取到全局最优解 <span class="arithmatex"><span class="MathJax_Preview">-\log 4</span><script type="math/tex">-\log 4</script></span> 当且仅当 <span class="arithmatex"><span class="MathJax_Preview">p_g = p_{\text{data}}</span><script type="math/tex">p_g = p_{\text{data}}</script></span>。</p>
+<blockquote>
+<p>Proof：</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">C(G)</span><script type="math/tex">C(G)</script></span> 的形式与 KL 散度相近，将其变形得到：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\begin{align}
+C(G) &amp;= \mathbb{E}_{\boldsymbol x \sim p_{\text{data}}}[\log \frac{p_{\text{data}}(\boldsymbol{x})}{\frac 1 2 (p_{\text{data}}(\boldsymbol{x}) + p_g(\boldsymbol{x}))}] + 
+\mathbb{E}_{\boldsymbol{z} \sim p_{g}}[\log \frac{p_g(\boldsymbol{x})}{\frac 1 2(p_{\text{data}}(\boldsymbol{x}) + p_g(\boldsymbol{x}))}] - \log 4\\
+&amp;= - \log 4 + \text{KL}(p_{\text{data}} \Vert \frac{p_{\text{data}}(\boldsymbol{x}) + p_g(\boldsymbol{x})}{2}) + \text{KL}(p_g \Vert \frac{p_{\text{data}}(\boldsymbol{x}) + p_g(\boldsymbol{x})}{2})
+\end{align}
+</div>
+<script type="math/tex; mode=display">
+\begin{align}
+C(G) &= \mathbb{E}_{\boldsymbol x \sim p_{\text{data}}}[\log \frac{p_{\text{data}}(\boldsymbol{x})}{\frac 1 2 (p_{\text{data}}(\boldsymbol{x}) + p_g(\boldsymbol{x}))}] + 
+\mathbb{E}_{\boldsymbol{z} \sim p_{g}}[\log \frac{p_g(\boldsymbol{x})}{\frac 1 2(p_{\text{data}}(\boldsymbol{x}) + p_g(\boldsymbol{x}))}] - \log 4\\
+&= - \log 4 + \text{KL}(p_{\text{data}} \Vert \frac{p_{\text{data}}(\boldsymbol{x}) + p_g(\boldsymbol{x})}{2}) + \text{KL}(p_g \Vert \frac{p_{\text{data}}(\boldsymbol{x}) + p_g(\boldsymbol{x})}{2})
+\end{align}
+</script>
+</div>
+<p>由 KL 散度的性质可知其最小值为 <span class="arithmatex"><span class="MathJax_Preview">0</span><script type="math/tex">0</script></span> 当且仅当 <span class="arithmatex"><span class="MathJax_Preview">p_{\text{data}} = p_g</span><script type="math/tex">p_{\text{data}} = p_g</script></span>，因此得证。</p>
+</blockquote>
+<h3 id="_8">算法收敛性<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>Prop 2：如果 <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">D</span><script type="math/tex">D</script></span> 有足够的容量，并且算法的每一步判别模型 <span class="arithmatex"><span class="MathJax_Preview">D</span><script type="math/tex">D</script></span> 都能够优化得到对于给定 <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> 的最优，则 <span class="arithmatex"><span class="MathJax_Preview">p_g</span><script type="math/tex">p_g</script></span> 收敛到 <span class="arithmatex"><span class="MathJax_Preview">p_{\text{data}}</span><script type="math/tex">p_{\text{data}}</script></span>。</p>
+<blockquote>
+<p>Proof:</p>
+<p>转换视角，考虑 <span class="arithmatex"><span class="MathJax_Preview">V(G, D) = U(p_g, D)</span><script type="math/tex">V(G, D) = U(p_g, D)</script></span> 是关于 <span class="arithmatex"><span class="MathJax_Preview">p_g</span><script type="math/tex">p_g</script></span> 的函数，则 <span class="arithmatex"><span class="MathJax_Preview">U(p_g, D)</span><script type="math/tex">U(p_g, D)</script></span> 是凸函数。</p>
+<p>而由于每次 <span class="arithmatex"><span class="MathJax_Preview">D</span><script type="math/tex">D</script></span> 都训练到最优，则凸函数的上确界 <span class="arithmatex"><span class="MathJax_Preview">\text{sup}_D U(p_g, D)</span><script type="math/tex">\text{sup}_D U(p_g, D)</script></span> 同样是凸函数。</p>
+<p>对于凸函数进行优化一定可以找到最优解。</p>
+</blockquote>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2022年6月30日</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2022年7月10日</span>
       
     
   </small>
@@ -1060,7 +1168,7 @@
     <nav class="md-footer__inner md-grid" aria-label="页脚">
       
         
-        <a href="../../gan/gan/" class="md-footer__link md-footer__link--prev" aria-label="上一页: GAN" rel="prev">
+        <a href="../../../../cs/cryptography/cryptography/signature/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 数字签名" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1069,20 +1177,20 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              GAN
+              数字签名
             </div>
           </div>
         </a>
       
       
         
-        <a href="../ps-gan/" class="md-footer__link md-footer__link--next" aria-label="下一页: PS-GAN" rel="next">
+        <a href="../../adversarial_attack/pgd/" class="md-footer__link md-footer__link--next" aria-label="下一页: PGD" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              PS-GAN
+              PGD
             </div>
           </div>
           <div class="md-footer__button md-icon">
