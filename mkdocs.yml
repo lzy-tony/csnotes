@@ -29,6 +29,13 @@ extra:
 
 nav:
   - 计算机科学:
+    - 人工智能:
+      - 人工智能导论:
+        - 说明: cs/ai/ai/info.md
+        - 搜索: cs/ai/ai/search.md
+        - 深度学习: cs/ai/ai/deep_learning.md
+        - 对抗搜索: cs/ai/ai/adv_search.md
+        - 统计学习: cs/ai/ai/statistical_learning.md
     - 密码学:
       - 现代密码学:
         - 说明: cs/cryptography/cryptography/info.md
