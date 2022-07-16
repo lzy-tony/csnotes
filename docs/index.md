@@ -1,3 +1,3 @@
 # csnotes
 
-杂记。
+![](./img/bagan.png)
