@@ -1,4 +1,4 @@
-# RetinNet
+# RetinaNet
 
 ## 概述
 
