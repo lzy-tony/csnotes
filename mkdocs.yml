@@ -51,6 +51,8 @@ nav:
     - AI:
       - GAN:
         - GAN: papers/ai/gan/gan.md
+      - NN:
+        - CBAM: papers/ai/network/cbam.md
       - 对抗攻防:
         - PGD: papers/ai/adversarial_attack/pgd.md
         - PS-GAN: papers/ai/adversarial_attack/ps-gan.md
