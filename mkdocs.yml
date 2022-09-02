@@ -63,6 +63,14 @@ nav:
         - YOLOv2: papers/ai/object_detection/yolov2.md
         - YOLOv3: papers/ai/object_detection/yolov3.md
         - RetinaNet: papers/ai/object_detection/retinanet.md
+  - 编程工具:
+    - PyTorch:
+      - tensor: tools/pytorch/tensor.md
+      - Dataset & DataLoader: tools/pytorch/data.md
+      - Module: tools/pytorch/module.md
+      - Autograd: tools/pytorch/autograd.md
+      - Optimizer: tools/pytorch/optimizer.md
+      - Save & Load: tools/pytorch/load.md
 
 extra_javascript:
   - 'https://cdn.jsdelivr.net/npm/mathjax@2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
