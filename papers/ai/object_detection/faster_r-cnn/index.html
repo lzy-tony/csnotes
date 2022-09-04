@@ -13,7 +13,7 @@
     
     
       
-        <title>FPN - csnotes</title>
+        <title>Faster R-CNN - csnotes</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fpn" class="md-skip">
+        <a href="#faster-r-cnn" class="md-skip">
           跳转至
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              FPN
+              Faster R-CNN
             
           </span>
         </div>
@@ -942,20 +942,6 @@
               
   
   
-  
-    <li class="md-nav__item">
-      <a href="../faster_r-cnn/" class="md-nav__link">
-        Faster R-CNN
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
     
   
   
@@ -968,12 +954,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          FPN
+          Faster R-CNN
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        FPN
+        Faster R-CNN
       </a>
       
         
@@ -1007,50 +993,44 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    模型结构
+    推理
   </a>
   
-    <nav class="md-nav" aria-label="模型结构">
+    <nav class="md-nav" aria-label="推理">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#bottom-up-pathway" class="md-nav__link">
-    Bottom-up pathway
+  <a href="#pipeline" class="md-nav__link">
+    Pipeline
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#top-down-pathway-and-lateral-connections" class="md-nav__link">
-    Top-down pathway and lateral connections
-  </a>
-  
-    <nav class="md-nav" aria-label="Top-down pathway and lateral connections">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    自顶向下
+    特征提取网络
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    横向连接
+  <a href="#rpn" class="md-nav__link">
+    RPN
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    卷积
+  <a href="#roi-pooling" class="md-nav__link">
+    RoI pooling
   </a>
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#classification" class="md-nav__link">
+    Classification
+  </a>
   
 </li>
         
@@ -1060,9 +1040,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    应用
+  <a href="#_4" class="md-nav__link">
+    训练
   </a>
+  
+    <nav class="md-nav" aria-label="训练">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    四步交替训练
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    正负样本分配
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1070,6 +1070,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fpn/" class="md-nav__link">
+        FPN
+      </a>
     </li>
   
 
@@ -1344,50 +1358,44 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    模型结构
+    推理
   </a>
   
-    <nav class="md-nav" aria-label="模型结构">
+    <nav class="md-nav" aria-label="推理">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#bottom-up-pathway" class="md-nav__link">
-    Bottom-up pathway
+  <a href="#pipeline" class="md-nav__link">
+    Pipeline
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#top-down-pathway-and-lateral-connections" class="md-nav__link">
-    Top-down pathway and lateral connections
-  </a>
-  
-    <nav class="md-nav" aria-label="Top-down pathway and lateral connections">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    自顶向下
+    特征提取网络
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    横向连接
+  <a href="#rpn" class="md-nav__link">
+    RPN
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    卷积
+  <a href="#roi-pooling" class="md-nav__link">
+    RoI pooling
   </a>
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#classification" class="md-nav__link">
+    Classification
+  </a>
   
 </li>
         
@@ -1397,9 +1405,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    应用
+  <a href="#_4" class="md-nav__link">
+    训练
   </a>
+  
+    <nav class="md-nav" aria-label="训练">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    四步交替训练
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    正负样本分配
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1415,47 +1443,58 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/lzy-tony/csnotes/edit/master/docs/papers/ai/object_detection/fpn.md" title="编辑此页" class="md-content__button md-icon">
+  <a href="https://github.com/lzy-tony/csnotes/edit/master/docs/papers/ai/object_detection/faster_r-cnn.md" title="编辑此页" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="fpn">FPN<a class="headerlink" href="#fpn" title="Permanent link">&para;</a></h1>
+<h1 id="faster-r-cnn">Faster R-CNN<a class="headerlink" href="#faster-r-cnn" title="Permanent link">&para;</a></h1>
 <h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>[CVPR2017][FPN] Feature Pyramid Networks for Object Detection</p>
-<p>FPN 是一个非常重要的 idea，这种设计思想被广泛应用于后续的目标检测方法中。</p>
+<p>[NIPS2015][Faster R-CNN] Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks</p>
 <h2 id="motivation">Motivation<a class="headerlink" href="#motivation" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="../img/feature_pyramid.PNG" /></p>
-<p>对于不同 scale 的图像/特征识别物体是计算机视觉中常见的任务，许多的目标检测模型在识别的过程中应用了不同的 scale。在提取特征的过程中形成了这种“特征金字塔”（feature pyramid）的结构。在特征金字塔中：</p>
+<p>基于 region proposal 的方法使用的 selective search 等生成方法效率不佳。</p>
+<p>Contribution：</p>
 <ul>
-<li>顶层的特征图有强语意（semantically strong），但位置信息粗略，用来预测小物体的 bbox 不准确。</li>
-<li>底层的特征图有弱语意，但位置信息精确。</li>
+<li>提出 RPN 利用神经网络加速并提升生成 region proposal 的效率和表现；</li>
+<li>引入 anchor 的概念，从另一个角度考虑不同尺度和比例的物体（scale &amp; ratio）；</li>
+<li>提出新的训练方式，可以精调 RPN 和目标检测网络。</li>
 </ul>
-<p>因此，作者考虑能够通过一种方法提取兼有二者优点的特征。将上层的强语意与下层的高分辨率结合。</p>
-<h2 id="_2">模型结构<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="bottom-up-pathway">Bottom-up pathway<a class="headerlink" href="#bottom-up-pathway" title="Permanent link">&para;</a></h3>
-<p>自底向上的过程生成强语意的金字塔顶。</p>
-<p>这一过程相当于下采样的过程，使用常用的卷积层就可以实现。在作者使用的 ResNet backbone 中，作者采样的步长为 <span class="arithmatex"><span class="MathJax_Preview">2</span><script type="math/tex">2</script></span>，最后留下的特征图为 <span class="arithmatex"><span class="MathJax_Preview">\{C_2, C_3, C_4, C_5\}</span><script type="math/tex">\{C_2, C_3, C_4, C_5\}</script></span>，相对原图像采样步长分别为 <span class="arithmatex"><span class="MathJax_Preview">\{4, 8, 16, 32\}</span><script type="math/tex">\{4, 8, 16, 32\}</script></span>。</p>
-<h3 id="top-down-pathway-and-lateral-connections">Top-down pathway and lateral connections<a class="headerlink" href="#top-down-pathway-and-lateral-connections" title="Permanent link">&para;</a></h3>
-<p>自顶向上的过程，并利用横向连接进行特征融合。</p>
-<p><img alt="" src="../img/top_down.PNG" /></p>
-<h4 id="_3">自顶向下<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
-<p>对语意更强的高层特征图进行上采样，得到与下层相同的尺寸。</p>
-<h4 id="_4">横向连接<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
-<p>对下层特征图用 <span class="arithmatex"><span class="MathJax_Preview">1 \times 1</span><script type="math/tex">1 \times 1</script></span> 卷积降维，并且与按位加与上层融合。</p>
-<h4 id="_5">卷积<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
-<p>为降低混叠效应（aliasing effect），对得到的融合后的特征图再进行 <span class="arithmatex"><span class="MathJax_Preview">3 \times</span><script type="math/tex">3 \times</script></span> 卷积，得到最终结果 <span class="arithmatex"><span class="MathJax_Preview">\{P_2, P_3, P_4, P_5\}</span><script type="math/tex">\{P_2, P_3, P_4, P_5\}</script></span>。</p>
-<h2 id="_6">应用<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>以 YOLOv4 为例，FPN 被应用在 neck 的部分对于 backbone 提取出的多尺度特征进行融合。</p>
-<p><img alt="" src="../img/fpn_in_yolov4.PNG" /></p>
+<h2 id="_2">推理<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="pipeline">Pipeline<a class="headerlink" href="#pipeline" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../img/faster_r-cnn.PNG" /></p>
+<h3 id="_3">特征提取网络<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>用于提取特征图。这部分网络由 RPN 和检测网络进行参数共享</p>
+<h3 id="rpn">RPN<a class="headerlink" href="#rpn" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../img/rpn.PNG" /></p>
+<p>对于每个位置预先定义一系列 <span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> 个不同尺度、不同比例的锚框，作为预测区域的基准。</p>
+<p><code>cls layer</code> 分支预测 proposal 是物体和不是物体的分数共 <span class="arithmatex"><span class="MathJax_Preview">2k</span><script type="math/tex">2k</script></span> 个输出；<code>reg layer</code> 利用锚框为基准预测偏置量共 <span class="arithmatex"><span class="MathJax_Preview">4k</span><script type="math/tex">4k</script></span> 个输出。</p>
+<h3 id="roi-pooling">RoI pooling<a class="headerlink" href="#roi-pooling" title="Permanent link">&para;</a></h3>
+<p>全连接层每次输入的大小必须是相同的，因此不同大小的 region proposal 必须转换为相同长度的 feature vector。</p>
+<p>将每个 proposal 对应的 feature map 区域划分为 <span class="arithmatex"><span class="MathJax_Preview">w \times h</span><script type="math/tex">w \times h</script></span> 的网格，每一部分做 max pooling，可完成上述转换。</p>
+<h3 id="classification">Classification<a class="headerlink" href="#classification" title="Permanent link">&para;</a></h3>
+<p>进行分类和位置回归精调。</p>
+<h2 id="_4">训练<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="_5">四步交替训练<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ol>
+<li>使用 ImageNet 预训练权重初始化 RPN 网络的 conv 层，训练 RPN 网络（同时更新 conv 层和 RPN 特有层）；</li>
+<li>根据训练好的 RPN 网络 proposal，使用 ImageNet 预训练权重初始化 Faster R-CNN 网络的 conv 层，然后训练 Faster R-CNN 网络（同时更新 conv 层和 Faster R-CNN 特有层）；</li>
+<li>固定上一步训练好的 conv 层，训练 RPN 网络（只更新 RPN 特有层）；</li>
+<li>固定 conv 层和 RPN，训练 Faster R-CNN 网络（只更新 Faster R-CNN 特有层）。</li>
+</ol>
+<h3 id="_6">正负样本分配<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>对于每个 anchor 分配一个二值的正负，正例为：</p>
+<ol>
+<li>与 gt IoU 最高；</li>
+<li>与 gt IoU &gt; 0.7。</li>
+</ol>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2022年7月12日</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2022年9月4日</span>
       
     
   </small>
@@ -1478,7 +1517,7 @@
     <nav class="md-footer__inner md-grid" aria-label="页脚">
       
         
-        <a href="../faster_r-cnn/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Faster R-CNN" rel="prev">
+        <a href="../r-cnn/" class="md-footer__link md-footer__link--prev" aria-label="上一页: R-CNN" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1487,20 +1526,20 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              Faster R-CNN
+              R-CNN
             </div>
           </div>
         </a>
       
       
         
-        <a href="../yolov1/" class="md-footer__link md-footer__link--next" aria-label="下一页: YOLOv1" rel="next">
+        <a href="../fpn/" class="md-footer__link md-footer__link--next" aria-label="下一页: FPN" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              YOLOv1
+              FPN
             </div>
           </div>
           <div class="md-footer__button md-icon">
