@@ -72,6 +72,8 @@ nav:
       - Autograd: tools/pytorch/autograd.md
       - Optimizer: tools/pytorch/optimizer.md
       - Save & Load: tools/pytorch/load.md
+    - RISC-V:
+      - RV32I: tools/risc-v/rv32i.md
 
 extra_javascript:
   - 'https://cdn.jsdelivr.net/npm/mathjax@2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
