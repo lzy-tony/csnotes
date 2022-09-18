@@ -74,6 +74,8 @@ nav:
       - Save & Load: tools/pytorch/load.md
     - RISC-V:
       - RV32I: tools/risc-v/rv32i.md
+    - SystemVerilog:
+      - 基本语法: tools/systemverilog/syntax.md
 
 extra_javascript:
   - 'https://cdn.jsdelivr.net/npm/mathjax@2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
