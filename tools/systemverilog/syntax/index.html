@@ -13,7 +13,7 @@
     
     
       
-        <title>Autograd - csnotes</title>
+        <title>基本语法 - csnotes</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#autograd" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Autograd
+              基本语法
             
           </span>
         </div>
@@ -268,7 +268,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../tensor/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../pytorch/tensor/" class="md-tabs__link md-tabs__link--active">
         编程工具
       </a>
     </li>
@@ -1070,14 +1070,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
       
       
       
@@ -1100,7 +1098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tensor/" class="md-nav__link">
+      <a href="../../pytorch/tensor/" class="md-nav__link">
         tensor
       </a>
     </li>
@@ -1114,7 +1112,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../data/" class="md-nav__link">
+      <a href="../../pytorch/data/" class="md-nav__link">
         Dataset & DataLoader
       </a>
     </li>
@@ -1128,7 +1126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/" class="md-nav__link">
+      <a href="../../pytorch/module/" class="md-nav__link">
         Module
       </a>
     </li>
@@ -1140,21 +1138,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../pytorch/autograd/" class="md-nav__link">
         Autograd
       </a>
-      
     </li>
   
 
@@ -1166,7 +1154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../optimizer/" class="md-nav__link">
+      <a href="../../pytorch/optimizer/" class="md-nav__link">
         Optimizer
       </a>
     </li>
@@ -1180,7 +1168,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../load/" class="md-nav__link">
+      <a href="../../pytorch/load/" class="md-nav__link">
         Save & Load
       </a>
     </li>
@@ -1246,12 +1234,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" checked>
       
       
       
@@ -1272,11 +1262,289 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../systemverilog/syntax/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          基本语法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         基本语法
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    硬件描述与硬件设计
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    基本结构
+  </a>
+  
+    <nav class="md-nav" aria-label="基本结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    模块
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    模块例化
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    数据
+  </a>
+  
+    <nav class="md-nav" aria-label="数据">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    常量和整数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    数据取值
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    数据类型
+  </a>
+  
+    <nav class="md-nav" aria-label="数据类型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    基本数据类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    向量与标量
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    运算
+  </a>
+  
+    <nav class="md-nav" aria-label="运算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    位运算
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    关系和逻辑运算符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    算术运算符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    条件运算符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    位拼接运算符
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    行为语句
+  </a>
+  
+    <nav class="md-nav" aria-label="行为语句">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#always" class="md-nav__link">
+    always 过程语句
+  </a>
+  
+    <nav class="md-nav" aria-label="always 过程语句">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#always_comb" class="md-nav__link">
+    always_comb 过程语句
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alwayss_ff" class="md-nav__link">
+    alwayss_ff 过程语句
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beginend" class="md-nav__link">
+    begin/end 语句块
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    赋值语句
+  </a>
+  
+    <nav class="md-nav" aria-label="赋值语句">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    持续赋值语句
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    过程赋值语句
+  </a>
+  
+    <nav class="md-nav" aria-label="过程赋值语句">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    非阻塞赋值语句
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    阻塞赋值语句
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    条件语句
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    循环语句
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1315,6 +1583,258 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    硬件描述与硬件设计
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    基本结构
+  </a>
+  
+    <nav class="md-nav" aria-label="基本结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    模块
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    模块例化
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    数据
+  </a>
+  
+    <nav class="md-nav" aria-label="数据">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    常量和整数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    数据取值
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    数据类型
+  </a>
+  
+    <nav class="md-nav" aria-label="数据类型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    基本数据类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    向量与标量
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    运算
+  </a>
+  
+    <nav class="md-nav" aria-label="运算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    位运算
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    关系和逻辑运算符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    算术运算符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    条件运算符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    位拼接运算符
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    行为语句
+  </a>
+  
+    <nav class="md-nav" aria-label="行为语句">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#always" class="md-nav__link">
+    always 过程语句
+  </a>
+  
+    <nav class="md-nav" aria-label="always 过程语句">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#always_comb" class="md-nav__link">
+    always_comb 过程语句
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alwayss_ff" class="md-nav__link">
+    alwayss_ff 过程语句
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beginend" class="md-nav__link">
+    begin/end 语句块
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    赋值语句
+  </a>
+  
+    <nav class="md-nav" aria-label="赋值语句">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    持续赋值语句
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    过程赋值语句
+  </a>
+  
+    <nav class="md-nav" aria-label="过程赋值语句">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    非阻塞赋值语句
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    阻塞赋值语句
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    条件语句
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    循环语句
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1325,21 +1845,200 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/lzy-tony/csnotes/edit/master/docs/tools/pytorch/autograd.md" title="编辑此页" class="md-content__button md-icon">
+  <a href="https://github.com/lzy-tony/csnotes/edit/master/docs/tools/systemverilog/syntax.md" title="编辑此页" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="autograd">Autograd<a class="headerlink" href="#autograd" title="Permanent link">&para;</a></h1>
-<p>在写了在写了</p>
+<h1 id="_1">基本语法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">硬件描述与硬件设计<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>一般的，我们称 SystemVerilog 为硬件描述语言而非硬件设计语言。这决定了符合语法标准的代码只是对硬件行为的一种描述而非直接的电路设计，因此描述后的语言不一定是可综合的。因此代码描述的抽象程度（底层描述能够保证可综合但更为复杂；高层描述较为简便但不保证可综合）是需要注意的。</p>
+<h2 id="_3">基本结构<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_4">模块<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>以简单而输入与非门为例：</p>
+<div class="highlight"><pre><span></span><code><span class="k">module</span> <span class="n">and2x</span> <span class="p">(</span>
+    <span class="k">input</span> <span class="kt">wire</span> <span class="n">a</span><span class="p">,</span>
+    <span class="k">input</span> <span class="kt">wire</span> <span class="n">b</span><span class="p">,</span>
+    <span class="k">output</span> <span class="kt">wire</span> <span class="n">r</span><span class="p">);</span> <span class="c1">// 定义输入和输出信号</span>
+  <span class="k">assign</span> <span class="n">r</span> <span class="o">=</span> <span class="n">a</span> <span class="o">&amp;</span> <span class="n">b</span><span class="p">;</span> <span class="c1">// 主体部分，功能定义</span>
+<span class="k">endmodule</span>
+</code></pre></div>
+<p>SystemVerilog 的程序是由若干个模块作为基本单元构造而成的。在构建硬件时可以以模块为基本单位，通过多层次的连线，将小的模块连接成大的模块，最终来构造出目标的硬件。每一个模块的内容都包含在 <code>module</code> 和 <code>endmodule</code> 之间。</p>
+<p>对于一个模块：</p>
+<ol>
+<li>模块的声明和结束，模块以 <code>module</code> 开始，以 <code>endmodule</code> 结束。</li>
+<li>端口的定义：输入端口（<code>input</code>），还是输出端口（<code>output</code>），还是双向端口（<code>inout</code>）；端口的信号类型，常见的有 <code>wire</code> 和 <code>reg</code>。</li>
+<li>信号类型：寄存器类型 <code>reg</code> 以及连线类型 <code>wire</code> ，如果无法确认使用 <code>reg</code> 还是使用 <code>wire</code>，都可以使用 <code>logic</code> 来代替。</li>
+<li>模块的功能定义。</li>
+</ol>
+<h3 id="_5">模块例化<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">and2x</span> <span class="n">and2x_entity</span><span class="p">(</span>
+    <span class="p">.</span><span class="n">a</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mh">0</span><span class="p">]),</span>
+    <span class="p">.</span><span class="n">b</span> <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mh">0</span><span class="p">]),</span>
+    <span class="p">.</span><span class="n">r</span> <span class="p">(</span><span class="n">out</span><span class="p">));</span>
+</code></pre></div>
+<p>如果某些输出端口并不需要在外部连接，例化时可以悬空不连接，甚至删除。一般来说，input 端口在例化时不能删除，否则编译报错，output 端口在例化时可以删除。</p>
+<h2 id="_6">数据<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="_7">常量和整数<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>整数的常量是按照一定的格式写出的，格式规范为：</p>
+<div class="highlight"><pre><span></span><code>+/- &lt;size&gt; &#39; &lt;base&gt;&lt;value&gt;
+</code></pre></div>
+<p>进制包括了二进制（b 或者 B），十进制（d 或者 D），八进制（o 或者 O）以及十六进制（h 或者 H）。</p>
+<p>例如，一个有效的整数例子为 <code>4'd0</code>（4 位宽十进制 1）。</p>
+<h3 id="_8">数据取值<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>0、1：逻辑 01，；</li>
+<li>x：未知，用于不关心对应信号值的情况，该信号取任意值不影响整个逻辑电路的功能。</li>
+<li>z：高阻态，典型应用为从内存中获得内存的输入。</li>
+</ul>
+<h3 id="_9">数据类型<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<h4 id="_10">基本数据类型<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<p>基本数据类型包括了 <code>wire</code> 类型和 <code>reg</code> 类型。</p>
+<p><code>wire</code> 类型代表了在硬件电路中的物理连线，其特征就是输出的值紧随着输入值的变化而变化。如果没有驱动元件连接到 wire 型变量，缺省值一般为 z。</p>
+<p><code>reg</code> 数据类型会放到过程语句中，通过过程赋值语句进行赋值。<code>reg</code> 类型不一定必然会对应到硬件的寄存器，综合的时候会依据实际的情况使用连线（组合逻辑）或者寄存器（时序逻辑）来完成 <code>reg</code> 数据类型的功能。</p>
+<p>通常情况 <code>reg</code> 和 <code>wire</code> 类型都可以通过 <code>logic</code> 类型来统一表达。</p>
+<h4 id="_11">向量与标量<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<p>向量使用位宽来表达，使用中括号指定，形式为 <code>[msb:lsb]</code>。其中，<code>msb</code> 为最高位（most significant bit），<code>lsb</code> 是最低位（least significant bit）。</p>
+<p>索引向量可以直接使用 <code>[]</code> 完成：</p>
+<div class="highlight"><pre><span></span><code><span class="n">l</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mh">7</span><span class="p">];</span> <span class="c1">// 获取data的最高位</span>
+<span class="n">blob</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">];</span> <span class="c1">// 获取数据res中的最低8位，即最低一个字节</span>
+</code></pre></div>
+<h2 id="_12">运算<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<h3 id="_13">位运算<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<h3 id="_14">关系和逻辑运算符<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>全等运算符和不全等运算符：</p>
+<p>相等运算符（<code>==</code>）在进行比较的时候，如果其中的某一位是高阻态（用 Z 表示）或者是不定值（用 X 表示），那么最终的结果是不定值 X。</p>
+<p>全等运算符对于这些高阻态或者不定值也需要进行比较，只有完全一致才会获得 true 的结果。</p>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>A==B</th>
+<th>A===B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4b1101</td>
+<td>4b1101</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4b1100</td>
+<td>4b1101</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>4b110Z</td>
+<td>4b110Z</td>
+<td>X</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4b110Z</td>
+<td>4b110Z</td>
+<td>X</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_15">算术运算符<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>包括了加减乘除模运算符，这些运算符并不是最基本的运算符，在其背后综合出的电路中，需要使用对应的门电路组织成的组合逻辑来完成。</p>
+<h3 id="_16">条件运算符<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">condition</span> <span class="o">?</span> <span class="nl">result1:</span> <span class="n">result2</span>
+</code></pre></div>
+<h3 id="_17">位拼接运算符<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<p>拼接组合得到新的信号向量：<code>{a[3:0], b[7:6],c}</code>。</p>
+<h2 id="_18">行为语句<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<h3 id="always">always 过程语句<a class="headerlink" href="#always" title="Permanent link">&para;</a></h3>
+<p>一个模块中可以有多个 <code>always</code> 过程语句。一个模块的多个 <code>always</code> 过程语句是 <strong>并行</strong> 执行的。</p>
+<p>常用的 <code>always</code> 语句依据组合逻辑和时序逻辑分为两种：</p>
+<ul>
+<li><code>always_comb</code>：用来实现 <strong>组合逻辑</strong>；</li>
+<li><code>always_ff</code>：用来实现 <strong>时钟边沿触发的时序逻辑</strong>。</li>
+</ul>
+<h4 id="always_comb">always_comb 过程语句<a class="headerlink" href="#always_comb" title="Permanent link">&para;</a></h4>
+<p>四选一数据选择器示例：</p>
+<div class="highlight"><pre><span></span><code><span class="k">module</span> <span class="n">mux4_1</span> <span class="p">(</span>
+    <span class="k">input</span> <span class="n">din1</span><span class="p">,</span>
+    <span class="k">input</span> <span class="n">din2</span><span class="p">,</span>
+    <span class="k">input</span> <span class="n">din3</span><span class="p">,</span>
+    <span class="k">input</span> <span class="n">din4</span><span class="p">,</span>
+    <span class="k">input</span> <span class="n">se1</span><span class="p">,</span>
+    <span class="k">input</span> <span class="n">se2</span><span class="p">,</span>
+    <span class="k">output</span> <span class="kt">reg</span> <span class="n">out</span><span class="p">);</span>
+
+    <span class="k">always_comb</span>
+    <span class="k">begin</span>
+        <span class="k">case</span> <span class="p">({</span><span class="n">se1</span><span class="p">,</span><span class="n">se2</span><span class="p">})</span>
+            <span class="mh">2</span><span class="mb">&#39;b00</span> <span class="o">:</span> <span class="n">out</span> <span class="o">=</span> <span class="n">din1</span><span class="p">;</span>
+            <span class="mh">2</span><span class="mb">&#39;b01</span> <span class="o">:</span> <span class="n">out</span> <span class="o">=</span> <span class="n">din2</span><span class="p">;</span>
+            <span class="mh">2</span><span class="mb">&#39;b10</span> <span class="o">:</span> <span class="n">out</span> <span class="o">=</span> <span class="n">din3</span><span class="p">;</span>
+            <span class="mh">2</span><span class="mb">&#39;b11</span> <span class="o">:</span> <span class="n">out</span> <span class="o">=</span> <span class="n">din4</span><span class="p">;</span>
+        <span class="k">endcase</span>
+    <span class="k">end</span>
+<span class="k">endmodule</span>
+</code></pre></div>
+<h4 id="alwayss_ff">alwayss_ff 过程语句<a class="headerlink" href="#alwayss_ff" title="Permanent link">&para;</a></h4>
+<p>使用 <code>posedge</code> 指定上升沿，使用 <code>negedge</code> 指定下降沿，并且将边沿敏感类型的信号放置到 <code>always_ff</code> 过程块的敏感信号列表中。</p>
+<div class="highlight"><pre><span></span><code><span class="k">always_ff</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="beginend">begin/end 语句块<a class="headerlink" href="#beginend" title="Permanent link">&para;</a></h3>
+<p>begin/end 构造出的语句块被称为是串行块，其含义就是在 begin/end 之间的语句是“顺序执行”的。（尽管顺序这一概念在硬件中并不准确）</p>
+<h3 id="_19">赋值语句<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<p>赋值语句包括了 <strong>持续赋值语句</strong> 和 <strong>过程赋值语句</strong>。持续赋值语句在过程外使用，与过程语句并行执行。过程赋值语句在过程内使用，串行执行，用于描述过程的功能。</p>
+<h4 id="_20">持续赋值语句<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h4>
+<p>使用 <code>assign</code> 作为持续赋值语句使用，用于对 <code>wire</code> 类型的变量进行赋值。当输入变化时经过一定的延迟输出会根据 <code>assign</code> 指定的规则进行变化。</p>
+<h4 id="_21">过程赋值语句<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h4>
+<h5 id="_22">非阻塞赋值语句<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h5>
+<p>非阻塞赋值语句 <code>&lt;=</code>。</p>
+<p>在赋值语句出现的地方不立即被赋值，等到过程块结束后再进行更新。在执行的过程中被更新的左值保持不变，通常在 <code>always_ff</code> 过程中使用。</p>
+<h5 id="_23">阻塞赋值语句<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h5>
+<p>阻塞赋值语句 <code>=</code>。</p>
+<p>阻塞赋值语句会按照先后顺序关系“执行”。通常用于描述组合逻辑，在 <code>always_comb</code> 过程中使用。</p>
+<h3 id="_24">条件语句<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="mf">1.</span> <span class="k">if</span><span class="err">（逻辑表达式）</span> <span class="err">语句</span><span class="mh">1</span><span class="p">;</span>
+
+<span class="mf">2.</span> <span class="k">if</span><span class="err">（逻辑表达式）</span> <span class="err">语句</span><span class="mh">1</span><span class="p">;</span>
+
+    <span class="k">else</span> <span class="err">语句</span><span class="mh">2</span><span class="p">;</span>
+
+<span class="mf">3.</span> <span class="k">if</span> <span class="err">（逻辑表达式</span><span class="mh">1</span><span class="err">）语句</span><span class="mh">1</span><span class="p">;</span>
+
+    <span class="k">else</span> <span class="k">if</span> <span class="err">（逻辑表达式</span><span class="mh">2</span><span class="err">）</span> <span class="err">语句</span><span class="mh">2</span><span class="p">;</span>
+
+    <span class="k">else</span> <span class="k">if</span> <span class="err">（逻辑表达式</span><span class="mh">3</span><span class="err">）</span> <span class="err">语句</span><span class="mh">3</span><span class="p">;</span>
+
+    <span class="p">........</span>
+
+    <span class="k">else</span> <span class="k">if</span> <span class="err">（逻辑表达式</span><span class="n">n</span><span class="err">）</span> <span class="err">语句</span><span class="n">n</span><span class="p">;</span>
+
+    <span class="k">else</span> <span class="err">语句</span><span class="n">n</span><span class="o">+</span><span class="mh">1</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">case</span> <span class="p">(</span><span class="err">敏感表达式</span><span class="p">)</span>
+    <span class="err">条件判断</span><span class="mh">1</span><span class="err">：语句</span><span class="mh">1</span><span class="err">；</span>
+    <span class="err">条件判断</span><span class="mh">2</span><span class="err">：语句</span><span class="mh">2</span><span class="err">；</span>
+    <span class="p">.........</span>
+    <span class="err">条件判断</span><span class="n">n</span><span class="err">：语句</span><span class="n">n</span><span class="p">;</span>
+    <span class="k">default</span><span class="err">：语句</span><span class="n">n</span><span class="o">+</span><span class="mh">1</span><span class="p">;</span>
+<span class="k">endcase</span>
+</code></pre></div>
+<p>注意此处的 case 不需要 break 就可自行跳出。</p>
+<h3 id="_25">循环语句<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="err">（循环变量赋初值；循环结束条件；循环变量增值）执行语句；</span>
+</code></pre></div>
+<p>循环语句较为特殊，由于描述功能比较高层和抽象，因此转化为硬件的难度较大。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2022年9月2日</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2022年9月18日</span>
       
     
   </small>
@@ -1362,7 +2061,7 @@
     <nav class="md-footer__inner md-grid" aria-label="页脚">
       
         
-        <a href="../module/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Module" rel="prev">
+        <a href="../../risc-v/rv32i/" class="md-footer__link md-footer__link--prev" aria-label="上一页: RV32I" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1371,26 +2070,11 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              Module
+              RV32I
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../optimizer/" class="md-footer__link md-footer__link--next" aria-label="下一页: Optimizer" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              Optimizer
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
