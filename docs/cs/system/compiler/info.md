@@ -5,5 +5,5 @@
 
 ## 参考资料
 
-1. 2022-2023秋季学期清华大学计算机系编译原理。
+1. 2022-2023秋季学期清华大学计算机系编译原理课程。
 2. Aho A V, Sethi R, Ullman J D. Compilers: Principles, Techniques, and Tools.
