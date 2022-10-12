@@ -61,7 +61,7 @@ $$
 
 其中 $ 为符号序列的结束符。
 
-直观理解：$\text{Follow}$ 集合是一个对于一个 **句型** 而言的，代表着该句型能够推导出的 **紧邻字符** 集合。
+直观理解：$\text{Follow}$ 集合是一个对于一个 **非终结符** 而言的，代表着该句型能够推导出的 **紧邻字符** 集合。
 
 可以迭代计算所有 $A \in V_N$ 的 $\text{Follow}$ 集合：
 
@@ -83,7 +83,7 @@ $$
 \text{PS}(A \rightarrow \alpha) \cap \text{PS}(A \rightarrow \beta) = \Phi
 $$
 
-直观理解：YouOnlyLookOnce，只需向前扫描一个字符就可以做出确定性推断。
+直观理解：$\text{PS}$ 集合是对于一个 **产生式** 而言的。YouOnlyLookOnce，只需向前扫描一个字符就可以做出确定性推断。
 
 ### 递归下降分析
 
@@ -91,3 +91,110 @@ $$
 - 每遇到一个非终结符，则调用相应的分析子程序。
 
 直观理解：利用 LL(1) 的性质扫描进行 switch case 并递归下降。
+
+### 表驱动分析
+
+#### 预测分析表
+
+对于上下文无关文法 $G = (V_N, V_T, P, S)$ 建立预测分析表 $M$。$M$ 的每一行对应非终结符 $A \in V_N$，每一列对应终结符 $a \in V_T \cup \{\$\}$。
+
+表中的项 $M[A, a] \subseteq P$ 是一个产生式集合，得到过程为：
+
+对文法的每个产生式 $A \rightarrow a \in P$，若它的预测集合 $\text{PS}(A \rightarrow \alpha)$ 中包含 $a \in V_T \cup \{\$\}$，则将 $A \rightarrow a$ 加入 $M[A, a]$。
+
+#### 表驱动分析
+
+使用下推栈辅助完成。
+
+1. 若栈顶为终结符，则判断当前读入的单词符号是否与该终结符相匹配，若匹配，再读取下一单词符号继续分析；若不匹配，则进行错误处理。
+2. 若栈顶为非终结符，则根据该终结符和当前输入单词符号查 LL(1)分析表，若相应表项中是产生式（唯一的），则将此非终结符出栈，并把产生式右部符号从右至左入栈；若表项为空，则进行错误处理。
+3. 重复，直到栈顶 $\$$ 遇到文本串结束符 $\$$，分析结束。
+
+### 文本变换
+
+并非所有文法都满足 LL(1)，但一些文法可以通过简单变换转化为 LL(1)。
+
+特别地，这些步骤包括消除左递归和提取左公因子。
+
+#### 消除左递归
+
+定义：若文法中含有形如：
+
+$$
+P \rightarrow P_1 \alpha_0, \dots, P_n \rightarrow P_1 \alpha_n, n \ge 0
+$$
+
+的一组产生式，称为该文法是左递归的。
+
+##### 直接左递归
+
+当 $n = 0$ 时，有直接左递归情景。
+
+对于简化情况：
+
+$$
+P \rightarrow P \alpha | \beta
+$$
+
+可以将其改写为：
+
+$$
+\begin{align}
+& P \rightarrow \beta Q \\
+& Q \rightarrow \alpha Q | \varepsilon
+\end{align}
+$$
+
+将简化情况进行扩展，可以得到：
+
+对于一般形式直接左递归的一组公式：
+
+$$
+P \rightarrow P \alpha_1 | P \alpha_2 | \dots | P \alpha_m | \beta_1 | \dots | \beta_n
+$$
+
+其中 $\alpha_i \neq \varepsilon, \beta_i[0] \neq P$，可以进行变换：
+
+$$
+\begin{align}
+& P \rightarrow \beta_1 Q | \dots | \beta_n Q \\
+& Q \rightarrow \alpha_1 Q | \dots | \alpha_m Q | \varepsilon
+\end{align}
+$$
+
+##### 一般左递归
+
+对于无回路，无 $\varepsilon$ 产生式的文法，可以通过以下步骤消除一般左递归：
+
+```pseudocode
+for i = 1 to n do {
+  for j = 1 to i - 1 do {
+    A -> alpha_1 r | ... | alpha_k r 反复替代形如 A_i -> A_j 的产生式
+    A_j -> alpha_1 | ... | alpha_k 是关于 A_j 的全部产生式
+  }
+  消除关于 A_i 的直接左递归
+}
+```
+
+#### 提取左公因子
+
+对于形如：
+
+$$
+P \rightarrow \alpha \beta_1 | \dots | \alpha \beta_m | \gamma_1 | \dots | \gamma_n
+$$
+
+的一组产生式，需要消除重叠的左公因子，即引入新非终结符 $Q$ 替代。
+
+$$
+\begin{align}
+& P \rightarrow \alpha Q | \gamma_1 | \dots | \gamma_n \\
+& Q \rightarrow \beta_1 | \dots | \beta_m
+\end{align}
+$$
+
+### 出错处理
+
+递归下降分析的短语层恢复。
+
+表驱动的应急恢复。
