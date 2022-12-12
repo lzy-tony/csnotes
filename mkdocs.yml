@@ -48,6 +48,9 @@ nav:
         - 公钥密码体系: cs/cryptography/cryptography/public_key.md
         - 数字签名: cs/cryptography/cryptography/signature.md
     - 系统:
+      - 计算机组成原理:
+        - 说明: cs/system/organization/info.md
+        - 层次存储系统: cs/system/organization/memory_hierarchy.md
       - 编译原理:
         - 说明: cs/system/compiler/info.md
         - 绪论: cs/system/compiler/intro.md
