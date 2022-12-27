@@ -50,6 +50,8 @@ nav:
     - 系统:
       - 计算机组成原理:
         - 说明: cs/system/organization/info.md
+        - 数据: cs/system/organization/data.md
+        - 处理器: cs/system/organization/processor.md
         - 层次存储系统: cs/system/organization/memory_hierarchy.md
       - 编译原理:
         - 说明: cs/system/compiler/info.md

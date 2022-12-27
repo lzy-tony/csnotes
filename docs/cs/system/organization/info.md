@@ -6,3 +6,4 @@
 ## 参考资料
 
 1. 2022-2023秋季学期清华大学计算机系计算机组成原理课程。
+2. Patterson D. Computer Organization and Design RISC-V Edition: The Hardware/Software Interface.
