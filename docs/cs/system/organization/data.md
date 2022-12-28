@@ -103,16 +103,20 @@ CPU 时间 = 指令数 * CPI / 时钟频率
 乘法可以拆解为加法和减法的组合。
 
 考虑一个补码 $x = x_{n-1}x_{n-2} \dots x_1 x_0$：
+
 $$
 x = -2^{n - 1} x_{n - 1} + \sum \limits_{i = 0}^{n - 2} x_i2^i
 $$
+
 则容易有：
+
 $$
 \begin{align}
 x \times y &= x \times (-2^{n - 1}y_{n - 1} + \sum \limits_{i = 0}^{n - 2}y_i2^i) \\
 &= x \times \sum \limits_{i = 0}^{n - 1} 2^i (y_{i - 1} - y_i)
 \end{align}
 $$
+
 其中 $y_{-1} = 0$。
 
 因此，可直接用补码进行乘法运算，根据乘法相邻两位的不同组合确定是 $\pm x$。

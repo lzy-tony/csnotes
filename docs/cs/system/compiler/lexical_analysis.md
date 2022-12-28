@@ -26,7 +26,7 @@ position = initial + rate * 60
 
 ## 词法分析在编译器中的组织
 
-通常由法分析程序调用词法分析程序。
+通常由语法分析程序调用词法分析程序。
 
 ![](./img/lexer_position.PNG)
 
