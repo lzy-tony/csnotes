@@ -53,6 +53,7 @@ nav:
         - 数据: cs/system/organization/data.md
         - 处理器: cs/system/organization/processor.md
         - 层次存储系统: cs/system/organization/memory_hierarchy.md
+        - 总线和输入输出设备: cs/system/organization/io.md
       - 编译原理:
         - 说明: cs/system/compiler/info.md
         - 绪论: cs/system/compiler/intro.md
