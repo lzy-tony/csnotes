@@ -1823,7 +1823,7 @@
 <p>CPU 和外部设备同时工作，外部设备发起请求，CPU 暂停正在执行的程序，进行相应。</p>
 <p>提高了 CPU 效率，并可以同时管理多个外部设备。</p>
 <p>中断处理流程：</p>
-<p>关中断 -&gt; 保存端点 -&gt; 判断中断来源转中断服务 -&gt; 开中断 -&gt; 执行中断服务程序 -&gt; 关中断 -&gt; 恢复断点 -&gt; 开中断 -&gt; 返回端点。</p>
+<p>关中断 -&gt; 保存断点 -&gt; 判断中断来源转中断服务 -&gt; 开中断 -&gt; 执行中断服务程序 -&gt; 关中断 -&gt; 恢复断点 -&gt; 开中断 -&gt; 返回断点。</p>
 <p>适用情况：传输速率不高、传输量不大。</p>
 <p>对 CPU 干扰较大。</p>
 <h4 id="dma">DMA<a class="headerlink" href="#dma" title="Permanent link">&para;</a></h4>
@@ -1860,9 +1860,11 @@
 <h3 id="_10">仲裁<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p>总线仲裁需要考虑的因素：优先权、公平性。</p>
 <ul>
-<li>集中仲裁：有统一仲裁器仲裁。</li>
+<li>集中仲裁：有统一仲裁器仲裁。<ul>
 <li>菊链仲裁：所有设备共用一个总线请求信号，优先级高的最先拿到仲裁器发的 grant，如果无任务传递给下一个，简单但无法保证公平性，同时逐级传递总线授权信号限制了总线的速度。</li>
 <li>集中平行仲裁：所有设备单独与仲裁器相连。</li>
+</ul>
+</li>
 <li>分布仲裁：流量需确认无冲突后传输。</li>
 </ul>
 <h3 id="_11">同步与异步总线<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
@@ -1893,7 +1895,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2022年12月28日</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2022年12月30日</span>
       
     
   </small>

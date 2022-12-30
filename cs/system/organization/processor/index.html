@@ -1984,7 +1984,7 @@
 <h4 id="_8">数据冲突<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
 <h5 id="_9">前递<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h5>
 <p>EX 冒险：EX/MEM 段要写的寄存器和 ID/EX 段要操作的寄存器相同。</p>
-<p>MEM 冒险：MEM/WB 段要写的寄存器和 EX/MEM 段要操作的寄存器相同。</p>
+<p>MEM 冒险：MEM/WB 段要写的寄存器和 ID/EX 段要操作的寄存器相同。</p>
 <h5 id="_10">停顿<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h5>
 <p>一条指令在加载内存之后读取该寄存器（EX/MEM 段要读，且 ID/EX 段要操作的寄存器相同），产生冲突且无法通过前递解决，需要停顿直到 <code>load</code> 完成后，再利用前递完成。</p>
 <h4 id="_11">控制冲突<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
@@ -2005,16 +2005,20 @@
 <p>U（用户模式）、S（监管者模式）、M（机器模式）。</p>
 <h3 id="_15">中断与异常<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
 <ul>
-<li>同步异常：</li>
+<li>同步异常：<ul>
 <li>访问错误异常；</li>
 <li>断点异常；</li>
 <li>环境调用异常；</li>
 <li>非法指令异常；</li>
 <li>非对齐地址异常。</li>
-<li>异步异常（中断）：</li>
+</ul>
+</li>
+<li>异步异常（中断）：<ul>
 <li>软件中断：用户一个 hart 中断另一个 hart；</li>
 <li>时钟中断：计数器 <code>mtime</code> 大于比较寄存器 <code>mtimecmp</code>；</li>
 <li>外部中断：外设中断控制器触发。</li>
+</ul>
+</li>
 </ul>
 <h4 id="m">M 态异常处理<a class="headerlink" href="#m" title="Permanent link">&para;</a></h4>
 <p>CSR 寄存器：</p>
@@ -2052,7 +2056,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2022年12月27日</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2022年12月30日</span>
       
     
   </small>

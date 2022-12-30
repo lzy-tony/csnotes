@@ -2390,10 +2390,12 @@
 </ul>
 <h3 id="_14">写缓存<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
 <ul>
-<li>写直达（write through）：保证强一致性</li>
+<li>写直达（write through）：保证强一致性<ul>
 <li>写分配（write allocate）：写完加载进 cache。</li>
 <li>写不分配（no write allocate）：写完不需要加载进 cache，动机为如果操作系统要写整个数据块，则写完第一个字段就加载是不必要的。</li>
-<li>拖后些（write back）：若一致性。</li>
+</ul>
+</li>
+<li>拖后些（write back）：弱一致性。</li>
 </ul>
 <p><img alt="" src="../img/write_cache.PNG" /></p>
 <h3 id="cache_1">cache 缺失<a class="headerlink" href="#cache_1" title="Permanent link">&para;</a></h3>
@@ -2459,12 +2461,16 @@
 </blockquote>
 <h4 id="_27">可靠性与可用性<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h4>
 <ul>
-<li>可靠性：使用设备出现故障的几率衡量。</li>
+<li>可靠性：使用设备出现故障的几率衡量。<ul>
 <li>改善使用环境；</li>
 <li>提高各部件可靠性；</li>
 <li>减少组成部件。</li>
-<li>可用性：使用系统能正常运行的几率衡量。</li>
+</ul>
+</li>
+<li>可用性：使用系统能正常运行的几率衡量。<ul>
 <li>增加硬件冗余，如检错纠错码等。</li>
+</ul>
+</li>
 </ul>
 <h3 id="raid">RAID<a class="headerlink" href="#raid" title="Permanent link">&para;</a></h3>
 <p>廉价磁盘的冗余阵列（Redundant Array of Inexpensive Disks）。</p>
@@ -2483,32 +2489,38 @@
 <p>Bit-level striping with ECC codes。</p>
 <p>以字节为工作单位，对每个字节分解成一对 4 位的半字节，每个半字节加上 3 位校验码变成 7 位，分别写在 7 个磁盘上。</p>
 <p>控制器复杂，成本高，需要驱动器同步。</p>
+<p>例：3 + 4。</p>
 <h4 id="raid3">RAID3<a class="headerlink" href="#raid3" title="Permanent link">&para;</a></h4>
 <p>Striping with a dedicated parity disk。</p>
-<p>RAID2 简化版，每个字计算一个校验位，存储在校验驱动器上，需要驱动器同步。</p>
+<p>RAID2 简化版，每个字计算一个校验位，存储在校验驱动器上，需要驱动器同步，对随机读写不友好。</p>
+<p>例：3 + 1。</p>
 <h4 id="raid4">RAID4<a class="headerlink" href="#raid4" title="Permanent link">&para;</a></h4>
 <p>Striping with a dedicated parity disk。</p>
-<p>RAID0 + 校验，不对字进行校验，不需要驱动器同步，校验盘负载沉重。</p>
+<p>每个带计算一个校验带。</p>
+<p>RAID0 + 校验，不对字进行校验，不需要驱动器同步，对部分字节纠错能力差，校验盘负载沉重，对随机读写不友好。</p>
+<p>例：3 + 1。</p>
 <h4 id="raid5">RAID5<a class="headerlink" href="#raid5" title="Permanent link">&para;</a></h4>
 <p>Block-level striping with distributed parity information。</p>
 <p>减少校验盘负载，将校验位循环均匀分布在所有驱动器上。</p>
+<p>例：3 + 1。</p>
 <h4 id="raid6">RAID6<a class="headerlink" href="#raid6" title="Permanent link">&para;</a></h4>
 <p>Block-level striping with double distributed parity information。</p>
 <p>二维校验，可以纠正两个盘上的错误。</p>
+<p>例：3 + 2。</p>
 <h3 id="_28">固态硬盘<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h3>
 <p>固态硬盘（SSD）：由控制单元、存储单元组成。</p>
 <ul>
-<li>控制单元：FTL 完成上层逻辑地址到底层物理地址的转换、磨损均衡。</li>
+<li>控制单元：FTL 完成上层逻辑地址到底层物理地址的转换、磨损均衡，垃圾回收。</li>
 <li>存储单元：按 block 有限次擦除，按页进行读写，组织结构为 package -&gt; die -&gt; plane -&gt; block -&gt; page。</li>
 </ul>
-<p>以页的方式写入，块的方式擦除。</p>
+<p>以页的方式写入（最小读写单元），块的方式擦除（最小擦除单元）。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2022年12月28日</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2022年12月30日</span>
       
     
   </small>
