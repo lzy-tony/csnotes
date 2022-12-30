@@ -144,9 +144,9 @@ PC = tag | set index | block offset
 ### 写缓存
 
 - 写直达（write through）：保证强一致性
-  - 写分配（write allocate）：写完加载进 cache。
-  - 写不分配（no write allocate）：写完不需要加载进 cache，动机为如果操作系统要写整个数据块，则写完第一个字段就加载是不必要的。
-- 拖后些（write back）：若一致性。
+    - 写分配（write allocate）：写完加载进 cache。
+    - 写不分配（no write allocate）：写完不需要加载进 cache，动机为如果操作系统要写整个数据块，则写完第一个字段就加载是不必要的。
+- 拖后些（write back）：弱一致性。
 
 ![](./img/write_cache.PNG)
 
@@ -246,11 +246,11 @@ TLB 缺失将造成：流水线停止、通知操作系统、读页表、将表�
 #### 可靠性与可用性
 
 - 可靠性：使用设备出现故障的几率衡量。
-  - 改善使用环境；
-  - 提高各部件可靠性；
-  - 减少组成部件。
+    - 改善使用环境；
+    - 提高各部件可靠性；
+    - 减少组成部件。
 - 可用性：使用系统能正常运行的几率衡量。
-  - 增加硬件冗余，如检错纠错码等。
+    - 增加硬件冗余，如检错纠错码等。
 
 ### RAID
 
@@ -286,17 +286,25 @@ Bit-level striping with ECC codes。
 
 控制器复杂，成本高，需要驱动器同步。
 
+例：3 + 4。
+
 #### RAID3
 
 Striping with a dedicated parity disk。
 
-RAID2 简化版，每个字计算一个校验位，存储在校验驱动器上，需要驱动器同步。
+RAID2 简化版，每个字计算一个校验位，存储在校验驱动器上，需要驱动器同步，对随机读写不友好。
+
+例：3 + 1。
 
 #### RAID4
 
 Striping with a dedicated parity disk。
 
-RAID0 + 校验，不对字进行校验，不需要驱动器同步，校验盘负载沉重。
+每个带计算一个校验带。
+
+RAID0 + 校验，不对字进行校验，不需要驱动器同步，对部分字节纠错能力差，校验盘负载沉重，对随机读写不友好。
+
+例：3 + 1。
 
 #### RAID5
 
@@ -304,17 +312,21 @@ Block-level striping with distributed parity information。
 
 减少校验盘负载，将校验位循环均匀分布在所有驱动器上。
 
+例：3 + 1。
+
 #### RAID6
 
 Block-level striping with double distributed parity information。
 
 二维校验，可以纠正两个盘上的错误。
 
+例：3 + 2。
+
 ### 固态硬盘
 
 固态硬盘（SSD）：由控制单元、存储单元组成。
 
-- 控制单元：FTL 完成上层逻辑地址到底层物理地址的转换、磨损均衡。
+- 控制单元：FTL 完成上层逻辑地址到底层物理地址的转换、磨损均衡，垃圾回收。
 - 存储单元：按 block 有限次擦除，按页进行读写，组织结构为 package -> die -> plane -> block -> page。
 
-以页的方式写入，块的方式擦除。
+以页的方式写入（最小读写单元），块的方式擦除（最小擦除单元）。
